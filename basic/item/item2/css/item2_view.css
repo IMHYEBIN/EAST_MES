@@ -1,0 +1,99 @@
+:root {
+  --font-family: "SCDream6";
+  --background-color: #f0f4f5;
+  --light-color: #e1e2e1;
+  --dark-color: #363543;
+}
+
+@font-face {
+  font-family: "SCDream6";
+  src: url(/font/SCDream6.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr,
+th,
+td {
+  border-bottom: solid 1px black;
+}
+
+td {
+  padding-left: 2vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.td1{
+  width: 5vw;
+}
+
+.td2{
+  width: 10vw;
+}
+
+.td3{
+  width: 11vw;
+}
+
+.td4{
+  width: 7.5vw;
+}
+
+.td5{
+  width: 8vw;
+}
+
+.td6{
+  width: 11vw;
+}
+
+.td7{
+  width: 10.5vw;
+}
+
+.td8{
+  width: 10vw;
+}
+
+.td9{
+  width: 8vw;
+}
+
+.td10{
+  width: 7vw;
+}
+
+.td11{
+  width: 7vw;
+}
+
+.td12{
+  width: 10vw;
+}
+
+.td_btn{
+  width: 4vw;
+  padding-right: 1vw;
+}
+
+.btn{
+    width: 70px;
+    background-color: var(--dark-color);
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 6px;
+    margin-right: 6px;
+    color: var(--background-color);
+    cursor: pointer;
+}
