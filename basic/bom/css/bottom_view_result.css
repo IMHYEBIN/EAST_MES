@@ -1,0 +1,22 @@
+:root {
+    --font-family: "SCDream6";
+    --background-color: #e1e2e1;
+    --light-color: #f0f4f5;
+    --dark-color: #363543;
+  }
+  
+  @font-face {
+    font-family: "SCDream6";
+    src: url(/font/SCDream6.otf);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+  }
+
+table{
+    margin-left: 100px;
+}

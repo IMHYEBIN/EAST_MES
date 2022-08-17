@@ -1,0 +1,28 @@
+/*----------------------------------------------- 제품정보 추가 --------------------------------------------- */
+
+/* 추가 제목 */
+.new_title{
+    position: relative;
+        font-size: 23px;
+        font-weight: bold;
+    }
+    
+    /* 추가 품목표 */
+    table, thead, th, td, tfoot {
+        border: 1px solid rgb(165, 165, 165);
+        border-collapse: collapse;
+        margin: 5px;
+        padding: 3px;
+    }
+    
+    /* 추가 완료 버튼 */
+    #new_submit{
+        position: relative;
+    
+    }
+    
+    /* 추가 취소 버튼*/
+    #new_back{
+        position: relative;
+    
+    }
