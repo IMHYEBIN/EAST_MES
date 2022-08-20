@@ -23,9 +23,9 @@ $res = mysqli_query($conn, $sql);
                 echo "
             <tr>
             <td class='td'>ㄴ " . $row['child'] . "</td>
-            <form action='bom_edit.php' method='post' target='bom_edit'>
+            <form action='php/bottom_view_result_delete.php' method='post' target='bottom_view_result_delete'>
             <input type = 'hidden' name = 'id' value= " . $row['id'] . ">
-            <td class='td_btn'><input type='submit' class='btn' onclick='popup_edit()' value='삭제'></td>
+            <td class='td_btn'><input type='submit' class='btn' value='삭제'></td>
             </form>
             </tr>
             ";

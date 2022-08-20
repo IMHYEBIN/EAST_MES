@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <form method="post" target="view_frame" action="bom_tree.php">
+    <form method="post" target="tree_frame" action="bom_tree.php">
         <div class="container">
             <div class="title-section">
                 <div class="title-section__text">
@@ -24,9 +24,9 @@
             </div>
             <div class="search-section">
                 <div class="item">제품코드</div>
-                <div class="input"><input type="text" name="bom_code"></div>
+                <div class="input"><input type="text" name="item_code" placeholder="정확한 제품코드 입력해주세요"></div>
                 <div class="item">제품명</div>
-                <div class="input"><input type="text" name="bom_name"></div>
+                <div class="input"><input type="text" name="item_name" placeholder="정확한 제품명 입력해주세요"></div>
                 <button type="reset" class="btn">초기화</button>
                 <button type="submit" class="btn">검색</button>
             </div>

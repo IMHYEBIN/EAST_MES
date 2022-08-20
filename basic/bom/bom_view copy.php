@@ -61,10 +61,7 @@ $res = mysqli_query($conn, $sql);
 
 <body>
 
-
     <table>
-        	<div id="event_result"></div>
-
         <?php
         /////////////////////////////////////////////////////////////////////테이블 뷰
         for (; $row = mysqli_fetch_array($res);) {
@@ -85,14 +82,14 @@ $res = mysqli_query($conn, $sql);
         }
 
         ////////////////////////////////////////////로그 남기기
-        // $date = date('Y-m-d');
-        // $time = date('H:i:s');
-        // $location = "machine_view.php";
-        // $acc = "설비정보 VIEW";
+        $date = date('Y-m-d');
+        $time = date('H:i:s');
+        $location = "machine_view.php";
+        $acc = "설비정보 VIEW";
 
-        // $sql = "insert into log (date, time, location, acc) 
-		//  values ('" . $date . "', '" . $time . "', '" . $location . "', '" . $acc . "')";
-        // $res = mysqli_query($conn, $sql);
+        $sql = "insert into log (date, time, location, acc) 
+		 values ('" . $date . "', '" . $time . "', '" . $location . "', '" . $acc . "')";
+        $res = mysqli_query($conn, $sql);
 
         mysqli_close($conn); // 종료
         ?>

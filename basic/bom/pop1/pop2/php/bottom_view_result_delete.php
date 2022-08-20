@@ -5,27 +5,13 @@
 <?php $conn = new mysqli("localhost", "server", "00000000", "dataset");
 
 ////////////////////////////////////////////////////// INSERT
-$child = $_POST['child'];
-$add_date = date('Y-m-d');
+$id = $_POST['id'];
 
-echo $sql = "insert into bom (
-							parent,
-							child,
-							add_date
-							)
-		values (
-			'" . $_SESSION['item_code'] . "',
-			'" . $child . "',
-			'" . $add_date . "'
-				)";
+echo $sql = "delete FROM bom WHERE id = '" . $id . "'";
 
 $res = mysqli_query($conn, $sql);
 
-//////////////////////////////////////////////////////미리보기
 
-echo $parent;
-echo $child;
-echo $add_date;
 
 ////////////////////////////////////////////로그 남기기
 // $date = date('Y-m-d');
@@ -42,7 +28,6 @@ mysqli_close($conn); // 종료
 ?>
 
 <script type="text/javascript">
-	opener.document.location.href = "/basic/bom/bom_new.php" //부모의 부모창 다시 열기
-	// opener.close(); 
-    self.close();
+	opener.document.location.href = "/basic/bom/pop1/pop2/bottom_view_result.php" //부모의 부모창 다시 열기
+	self.close();
 </script>

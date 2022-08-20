@@ -74,7 +74,7 @@ if ($_POST['item_code'] != null) {
         <div>추가할 제품</div>
         <form action='/basic/bom/pop1/php/bottom_view_insert.php' method='post' target='bottom_view'>
             <div class="child">
-                <input type="text" name="child">
+                <input type="text" name="child" required>
                 <input type='submit' class='btn' value='추가'>
             </div>
         </form>
