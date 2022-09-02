@@ -160,7 +160,12 @@ if ($item_code != null) {
 		</ul>
 	</div>
 
-	<!-- <div id="event_result"></div> -->
+
+	<form method="post" target="view_frame" action="bom_view.php">
+	<div id="select_bom"></div>
+	<input type="text" id="kkk">
+	</form>
+
 
 	<script>
 		$('#tree')
@@ -170,22 +175,16 @@ if ($item_code != null) {
 				for (i = 0, j = data.selected.length; i < j; i++) {
 					r.push(data.instance.get_node(data.selected[i]).text);
 				}
-				$('#event_result').html('Selected: ' + r.join(', '));
+				//  var select_bom = $('#select_bom', parent.frames['view_frame'].document).html(r.join(', '));
+				document.getElementById('kkk').value = r;
+				document.getElementById('select_bom').innerHTML = r;
+				
 			})
 			// create the instance
-			.jstree({
-				'plugins': ['wholerow', 'types'],
+			.jstree();
 
-				'themes': {
-					'responsive': true
-				},
-				'types': {
-					'default': {
-						'icon': '/img/icon/item1.png' 
-					}
-				}
-			});
 	</script>
+
 </body>
 
 </html>

@@ -53,10 +53,11 @@
                 </div>
                 <div class="frame-section">
                     <iframe frameborder="0" class="tree_frame" name="tree_frame" src="bom_tree.php"></iframe>
-                    <iframe frameborder="0" class="view_frame" name="view_frame" src="bom_view.php"></iframe>
+                    <iframe frameborder="0" class="view_frame" name="view_frame" src="bom_view.php" id='view_frame'></iframe>
                 </div>
             </div>
         </div>
+
     </form>
     <!-- 팝업 스크립트 적용 -->
     <script type="text/javascript">

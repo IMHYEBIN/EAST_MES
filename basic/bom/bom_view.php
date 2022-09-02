@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php $conn = mysqli_connect('localhost', 'server', '00000000', 'dataset'); ?>
 <?php
+echo $_GET['select_bom'];
 $item_code = $_POST["item_code"];
 $item_name = $_POST["item_name"];
 
@@ -55,7 +56,6 @@ $res = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/machine_view.css">
     <title>East Company | 설비관리 :: VIEW</title>
 </head>
 
@@ -63,10 +63,8 @@ $res = mysqli_query($conn, $sql);
 
 
     <table>
-        	<div id="event_result"></div>
 
         <?php
-        /////////////////////////////////////////////////////////////////////테이블 뷰
         for (; $row = mysqli_fetch_array($res);) {
 
             echo "
@@ -91,7 +89,7 @@ $res = mysqli_query($conn, $sql);
         // $acc = "설비정보 VIEW";
 
         // $sql = "insert into log (date, time, location, acc) 
-		//  values ('" . $date . "', '" . $time . "', '" . $location . "', '" . $acc . "')";
+        //  values ('" . $date . "', '" . $time . "', '" . $location . "', '" . $acc . "')";
         // $res = mysqli_query($conn, $sql);
 
         mysqli_close($conn); // 종료
@@ -104,6 +102,8 @@ $res = mysqli_query($conn, $sql);
             window.open("machine_edit.php", "machine_edit", "width=1110, height=200, top=200, left=100");
 
         }
+
+        console.log(document.getElementById('select_bom'));
     </script>
 </body>
 
