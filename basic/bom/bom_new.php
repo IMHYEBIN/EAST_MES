@@ -3,7 +3,7 @@
 if ($_POST['item_code'] != null) {
     $item_code = $_POST['item_code'];
     $_SESSION['item_code'] = $item_code;
-}else{
+} else {
     $item_code = "선택된 제품 없음";
 }
 ?>
@@ -53,31 +53,36 @@ if ($_POST['item_code'] != null) {
                 </div>
 
                 <!-- 상단 VIEW -->
-                <iframe frameborder="0" class="top_frame" name="top_frame" src="pop1/top_view.php"></iframe>
+                <iframe frameborder="0" class="top_frame" name="top_frame" src="/basic/bom/pop1/top_view.php"></iframe>
             </div>
         </form>
 
-        <!-- ////////////////////////////////////////////하단 섹션/////////////////////////////////////////////// -->
-        <form method="post" action="/basic/bom/pop1/bottom_view.php" target="bottom_frame">
+        <div class="bottom_section">
             <div class="table_section2">
-                <div class="header2_1">
-                    <div class="th">제품 BOM</div>
-                </div>
-                <div class="header2_2">
-                    <div class="root"><?= $item_code ?></div>
-                </div>
+                <!-- ////////////////////////////////////////////하단 섹션/////////////////////////////////////////////// -->
+                <form method="post" action="/basic/bom/pop1/bottom_view.php" target="bottom_frame">
+                    <div class="header2_1">
+                        <div class="th">제품 BOM</div>
+                    </div>
+                    <div class="header2_2">
+                        <div class="root"><?= $item_code ?></div>
+                    </div>
+                    <!-- 하단 VIEW -->
+                    <iframe frameborder="0" class="bottom_frame" name="bottom_frame" src="/basic/bom/pop1/bottom_view.php"></iframe>
+                </form>
             </div>
-            <!-- 하단 VIEW -->
-            <iframe frameborder="0" class="bottom_frame" name="bottom_frame" src="/basic/bom/pop1/bottom_view.php"></iframe>
-        </form>
 
-        <div>추가할 제품</div>
-        <form action='/basic/bom/pop1/php/bottom_view_insert.php' method='post' target='bottom_view'>
-            <div class="child">
-                <input type="text" name="child" required>
-                <input type='submit' class='btn' value='추가'>
+
+            <div class="add_section">
+                <div class="add_title">추가할 제품</div>
+                <form action='/basic/bom/pop1/php/bottom_view_insert.php' method='post' target='bottom_view'>
+                    <div class="insert_section">
+                        <input type="text" name="child" required>
+                        <input type='submit' class='btn' value='추가'>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
         <!-- ////////////////////////////////////////////버튼 섹션/////////////////////////////////////////////// -->
         <div class="btn_section">
             <button type="button" class="btn back_btn" onclick="self.close();">취소</button>

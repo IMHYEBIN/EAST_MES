@@ -1,0 +1,54 @@
+:root {
+    --font-family: "SCDream6";
+    --background-color: #f0f4f5;
+    --light-color: #e1e2e1;
+    --dark-color: #363543;
+  }
+  
+  @font-face {
+    font-family: "SCDream6";
+    src: url(/font/SCDream6.otf);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+  }
+
+  table{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .th {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 24px;
+    border-radius: 5px;
+    background-color: var(--dark-color);
+    color: var(--background-color);
+    margin-bottom: 1%;
+    text-align: center;
+  }
+
+  .td{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.5%;
+    text-align: center;
+  }
+  
+  .btn{
+    width: 80px;
+    background-color: var(--dark-color);
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 6px;
+    color: var(--background-color);
+  }

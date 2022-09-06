@@ -28,6 +28,5 @@ mysqli_close($conn); // 종료
 ?>
 
 <script type="text/javascript">
-	opener.document.location.href = "/basic/bom/pop1/pop2/bottom_view_result.php" //부모의 부모창 다시 열기
-	self.close();
+	document.location.href = "../bottom_view_result.php" //부모의 부모창 다시 열기
 </script>

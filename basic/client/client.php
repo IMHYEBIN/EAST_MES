@@ -38,9 +38,9 @@
                         <option value="5">협력사</option>
                     </select>
                 </div>
+                <button type="submit" class="btn">검색</button>
                 <button type="reset" class="btn">초기화</button>
-                
-                
+
             </div>
             <div class="table-section">
                 <div class="table-header">

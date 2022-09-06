@@ -121,15 +121,23 @@
   height: 25vh;
 }
 
-.table_section2 {
-  margin-top: 24px;
+.bottom_section{
   width: 100%;
-  padding-top: 12px;
-  padding-left: 12px;
-  padding-right: 12px;
+  display: flex;
+  flex-direction: row;
 }
 
+
+.table_section2 {
+  width: 50%;
+  padding-left: 12px;
+}
+
+
+
 .header2_1 {
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
   color: var(--light-color);
   background-color: var(--dark-color);
@@ -157,11 +165,8 @@
 }
 
 .bottom_frame {
-  padding-left: 12px;
-  padding-right: 12px;
   width: 100%;
-  height: 30vh;
-  border-radius: 5px;
+  height: 40vh;
 }
 
 .btn_section {
@@ -174,6 +179,45 @@
 }
 
 .btn_section button {
+  width: 10vw;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: var(--dark-color);
+  border-radius: 5px;
+  color: var(--background-color);
+  border: 0;
+}
+
+.add_section{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.add_title{
+  margin-right: 12px;
+  border-radius: 5px;
+  color: var(--light-color);
+  background-color: var(--dark-color);
+  padding: 12px 24px;
+  width: 100% -24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.insert_section{
+  width: 100% -24px;
+  height: 432px;
+  padding-right: 24px;
+  background-color: var(--light-color);
+}
+
+.insert_section input{
+  margin-top: 10px;
+}
+
+.insert_section .btn{
   width: 10vw;
   padding-top: 6px;
   padding-bottom: 6px;

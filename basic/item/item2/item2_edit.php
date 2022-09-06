@@ -4,9 +4,13 @@
 <?php
 $id = $_POST['id'];
 
-$sql = "select * from item2 where id = '" . $id . "'";
+$sql = "select * from item where id = '" . $id . "'";
 $res = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($res);
+
+$sql01 = "select * from item2 where item_code = '" . $row['item_code'] . "'";
+$res01 = mysqli_query($conn, $sql01);
+$row01 = mysqli_fetch_array($res01);
 
 ?>
 <!DOCTYPE html>
@@ -42,15 +46,15 @@ $row = mysqli_fetch_array($res);
                         <th>상태</th>
                         <td>
                             <select name="status">
-                                <option value="1" <?php if ($row['status'] == "1") {echo "selected";} ?>>양산</option>
-                                <option value="2" <?php if ($row['status'] == "2") {echo "selected";} ?>>단종</option>
-                                <option value="3" <?php if ($row['status'] == "3") {echo "selected";} ?>>A/S</option>
+                                <option value="3" <?php if ($row['status'] == "3") {echo "selected";} ?>>양산</option>
+                                <option value="4" <?php if ($row['status'] == "4") {echo "selected";} ?>>단종</option>
+                                <option value="5" <?php if ($row['status'] == "5") {echo "selected";} ?>>A/S</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <th>외부업체</th>
-                        <td><input name="client_name" type="text" placeholder="외부업체가 없을경우 비워주세요." value="<?= $row['client_name']; ?>"></td>
+                        <td><input name="client" type="text" placeholder="외부업체가 없을경우 비워주세요." value="<?= $row['client']; ?>"></td>
                         <th>사급구분</th>
                         <td>
                             <select name="supply">
@@ -72,15 +76,15 @@ $row = mysqli_fetch_array($res);
                     </tr>
                     <tr>
                         <th>공법</th>
-                        <td><input name="method" type="text" value="<?= $row['method']; ?>"></td>
+                        <td><input name="method" type="text" value="<?= $row01['method']; ?>"></td>
                         <th>C/T</th>
-                        <td><input name="ct" type="text" value="<?= $row['ct']; ?>"></td>
+                        <td><input name="ct" type="text" value="<?= $row01['ct']; ?>"></td>
                     </tr>
                     <tr>
                         <th>비고</th>
-                        <td colspan="3"><input name="acc" type="text" <select name="auto" value="<?= $row['acc']; ?>"></td>
+                        <td colspan="3"><input name="acc" type="text" name="auto" value="<?= $row['acc']; ?>"></td>
                     <tr>
-                    <tr>
+                    <!-- <tr>
                         <th>사진</th>
                         <td>
                             <input class="short" name="photo" type="text" value="<?= $row['photo']; ?>" placeholder="보류">
@@ -91,7 +95,7 @@ $row = mysqli_fetch_array($res);
                             <input class="short" name="paper" type="text" value="<?= $row['paper']; ?>" placeholder="보류">
                             <input class="btn" type="button" value="파일찾기">
                         </td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
             <div class="btn_section">

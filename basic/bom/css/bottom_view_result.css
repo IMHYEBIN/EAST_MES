@@ -3,6 +3,7 @@
     --background-color: #e1e2e1;
     --light-color: #f0f4f5;
     --dark-color: #363543;
+    --delete-color: #df4848;
   }
   
   @font-face {
@@ -17,6 +18,12 @@
     font-family: var(--font-family);
   }
 
-table{
-    margin-left: 100px;
-}
+  .btn{
+    width: 80px;
+    background-color: var(--delete-color);
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 6px;
+    color: var(--background-color);
+    border: none;
+  }

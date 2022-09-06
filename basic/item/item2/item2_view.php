@@ -9,14 +9,14 @@ $status = $_POST["status"];
 /////////////////////////////////////////////////////////////////////검색
 //조건 중 하나라도 입력이 되었으면 WHERE 추가
 if ($item_code != null || $item_name != null || $status > 0) {
-    $temp0 = "where";
+    $temp0 = "";
 } else {
     $temp0 = "";
 }
 
 //검색조건 1
 if ($item_code != null) {
-    $temp1 = " item_code like '%" . $item_code . "%'";
+    $temp1 = " and item_code like '%" . $item_code . "%'";
     //검색O = 플래그1
     $flag1 = 1;
 } else {
@@ -33,7 +33,7 @@ if ($item_name != null) {
     }
     //앞에서 검색을 하지않아서 플래그0이 넘어왔으면 AND를 붙이지 않음
     else
-        $temp2 = " item_name like '%" . $item_name . "%'";
+        $temp2 = " and item_name like '%" . $item_name . "%'";
     //플래그 0이 넘어왔으나 여기서 검사를 했으니 플래그 1
     $flag1 = 1;
 } else {
@@ -45,20 +45,22 @@ if ($status > 0) {
     if ($flag1 == 1) {
         $temp3 = " and status like '" . $status . "'";
     } else
-        $temp3 = " status like '" . $status . "'";
+        $temp3 = " and status like '" . $status . "'";
     $flag1 = 1;
 } else {
     $temp3 = "";
 }
 
 ///////////////////////////////////////////////////////////////////////SQL
-$sql = "select * from item2
+$sql = "select * from item where index1 = '2'
 " . $temp0 . "  
 " . $temp1 . "  
 " . $temp2 . " 
 " . $temp3 . " order by id desc";
 
 $res = mysqli_query($conn, $sql);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -79,14 +81,18 @@ $res = mysqli_query($conn, $sql);
         /////////////////////////////////////////////////////////////////////테이블 뷰
         for (; $row = mysqli_fetch_array($res);) {
 
-            if ($row['status'] == '1') {
-                $status_value = "양산";
-            }
-            if ($row['status'] == '2') {
-                $status_value = "단종";
-            }
+            $sql01 = "select * from item2 where item_code = '" . $row['item_code'] . "'";
+            $res01 = mysqli_query($conn, $sql01);
+            $row01 = mysqli_fetch_array($res01);
+
             if ($row['status'] == '3') {
+                $status_value = "양산";
+            } else if ($row['status'] == '4') {
+                $status_value = "단종";
+            } else if ($row['status'] == '5') {
                 $status_value = "A/S";
+            } else {
+                $status_value = "ERROR";
             }
 
 
@@ -97,6 +103,11 @@ $res = mysqli_query($conn, $sql);
                 $supply_value = "무상";
             }
 
+            if ($row01['auto'] == '1') {
+                $auto_value = "자동";
+            } else if ($row01['auto'] == '2') {
+                $auto_value = "수동";
+            }
             echo "
             <tr>
             <td class='td1' name='id'>" . $row['id'] . "</td>
@@ -104,12 +115,12 @@ $res = mysqli_query($conn, $sql);
             <td class='td3'>" . $row['item_name'] . "</td>
             <td class='td4'>" . $row['unit'] . "</td>
             <td class='td5'>" . $status_value . "</td>
-            <td class='td6'>" . $row['client_name'] . "</td>
+            <td class='td6'>" . $row['client'] . "</td>
             <td class='td7'>" . $supply_value . "</td>
             <td class='td8'>" . $row['safe_stock'] . "</td>
-            <td class='td9'>" . $row['auto'] . "</td>
-            <td class='td10'>" . $row['method'] . "</td>
-            <td class='td11'>" . $row['ct'] . "</td>
+            <td class='td9'>" . $auto_value . "</td>
+            <td class='td10'>" . $row01['method'] . "</td>
+            <td class='td11'>" . $row01['ct'] . "</td>
             <td class='td12'>" . $row['acc'] . "</td>
             <form action='item2_edit.php' method='post' target='item2_edit'>
             <input type = 'hidden' name = 'id' value= " . $row['id'] . ">

@@ -31,9 +31,9 @@
                 <div class="input">
                     <select class="select" name="status">
                         <option value='0' selected="selected">===선택===</option>
-                        <option value='1'>양산</option>
-                        <option value="2">단종</option>
-                        <option value="3">A/S</option>
+                        <option value='3'>양산</option>
+                        <option value="4">단종</option>
+                        <option value="5">A/S</option>
                     </select>
                 </div>
                 <button type="reset" class="btn">초기화</button>

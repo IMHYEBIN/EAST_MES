@@ -8,7 +8,7 @@ $item_code = $_POST['item_code'];
 $item_name = $_POST['item_name'];
 $unit = $_POST['unit'];
 $status = $_POST['status'];
-$client_name = $_POST['client_name'];
+$client = $_POST['client'];
 $supply = $_POST['supply'];
 $safe_stock = $_POST['safe_stock'];
 $auto = $_POST['auto'];
@@ -19,27 +19,38 @@ $photo = $_POST['photo'];
 $paper = $_POST['paper'];
 $edit_date = date('Y-m-d');
 
+//아이템코드가 변경될 경우
+//아이템코드가 변경되기 전에 아이템코드가 같은 항목을 찾음
+//item2의 세부 항목을 바꾸고 본 아이템의 항목도 변경함
+echo $sql = "select * from item where id='" . $id . "'";
+$res = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($res);
 
-$sql= "update item2 set
-item_code = '". $item_code ."',
-item_name = '". $item_name ."',
-unit = '". $unit ."',
-status = '". $status ."',
-client_name = '". $client_name ."',
-supply = '". $supply ."',
-safe_stock = '". $safe_stock ."',
-auto = '". $auto ."',
-method = '". $method ."',
-ct = '". $ct ."',
-acc = '". $acc ."',
-photo = '". $photo ."',
-paper = '". $paper ."',
-edit_date = '". $edit_date ."'
+echo $sql01 = "update item2 set
+item_code = '" . $item_code . "',
+auto = '" . $auto . "',
+method = '" . $method . "',
+ct = '" . $ct . "',
+photo = '" . $photo . "',
+paper = '" . $paper . "'
 							
-where id = ".$id;
+where item_code = '" . $row['item_code'] . "'";
+$res01 = mysqli_query($conn, $sql01);
 
-				//values 뒤에꺼는 필드의 삽입될 값 
-$res= mysqli_query($conn, $sql);
+echo $sql02 = "update item set
+item_code = '" . $item_code . "',
+item_name = '" . $item_name . "',
+unit = '" . $unit . "',
+status = '" . $status . "',
+client = '" . $client . "',
+supply = '" . $supply . "',
+safe_stock = '" . $safe_stock . "',
+acc = '" . $acc . "',
+edit_date = '" . $edit_date . "'
+							
+where id = " . $id;
+$res02 = mysqli_query($conn, $sql02);
+
 
 ////////////////////////////////////////////로그 남기기
 $date = date('Y-m-d');
@@ -56,6 +67,6 @@ mysqli_close($conn); // 종료
 
 <script type="text/javascript">
 	opener.opener.parent.location.reload(); //부모의 부모창 새로고침
- 	opener.close();					//부모창 닫기
- 	self.close();						//본인창 닫기
-	</script>
+	opener.close(); //부모창 닫기
+	self.close(); //본인창 닫기
+</script>

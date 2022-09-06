@@ -4,7 +4,7 @@
 <?php
 $id = $_POST['id'];
 
-$sql = "select * from item1 where id = '" . $id . "'";
+$sql = "select * from item where id = '" . $id . "'";
 $res = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($res);
 
@@ -42,20 +42,30 @@ $row = mysqli_fetch_array($res);
                         <th>상태</th>
                         <td>
                             <select name="status">
-                                <option value="1" <?php if ($row['status'] == "1") {echo "selected";} ?>>양산</option>
-                                <option value="2" <?php if ($row['status'] == "2") {echo "selected";} ?>>단종</option>
-                                <option value="3" <?php if ($row['status'] == "3") {echo "selected";} ?>>A/S</option>
+                                <option value="3" <?php if ($row['status'] == "3") {
+                                                        echo "selected";
+                                                    } ?>>양산</option>
+                                <option value="4" <?php if ($row['status'] == "4") {
+                                                        echo "selected";
+                                                    } ?>>단종</option>
+                                <option value="5" <?php if ($row['status'] == "5") {
+                                                        echo "selected";
+                                                    } ?>>A/S</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <th>외부업체</th>
-                        <td><input name="client_name" type="text" placeholder="외부업체가 없을경우 비워주세요." value="<?= $row['client_name']; ?>"></td>
+                        <td><input name="client" type="text" placeholder="외부업체가 없을경우 비워주세요." value="<?= $row['client']; ?>"></td>
                         <th>사급구분</th>
                         <td>
                             <select name="supply">
-                                <option value="1" <?php if ($row['supply'] == "1") {echo "selected";} ?>>유상</option>
-                                <option value="2" <?php if ($row['supply'] == "2") {echo "selected";} ?>>무상</option>
+                                <option value="1" <?php if ($row['supply'] == "1") {
+                                                        echo "selected";
+                                                    } ?>>유상</option>
+                                <option value="2" <?php if ($row['supply'] == "2") {
+                                                        echo "selected";
+                                                    } ?>>무상</option>
                             </select>
                         </td>
                     </tr>
@@ -65,7 +75,8 @@ $row = mysqli_fetch_array($res);
                         <th>비고</th>
                         <td><input name="acc" type="text" value="<?= $row['acc']; ?>"></td>
                     </tr>
-                    <tr>
+                    <!-- ???????????????????????????????????????????????????????????????????????????사진/도면 보류함 -->
+                    <!-- <tr>
                         <th>사진</th>
                         <td>
                             <input class="short" name="photo" type="text" value="<?= $row['photo']; ?>" placeholder="보류">
@@ -76,7 +87,7 @@ $row = mysqli_fetch_array($res);
                             <input class="short" name="paper" type="text" value="<?= $row['paper']; ?>" placeholder="보류">
                             <input class="btn" type="button" value="파일찾기">
                         </td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
             <div class="btn_section">

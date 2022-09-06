@@ -8,8 +8,8 @@
 $item_code = $_POST['item_code'];
 $item_name = $_POST['item_name'];
 $unit = $_POST['unit'];
-$useable = $_POST['useable'];
-$client_name = $_POST['client_name'];
+$status = $_POST['status'];
+$client = $_POST['client'];
 $supply = $_POST['supply'];
 $safe_stock = $_POST['safe_stock'];
 $maker = $_POST['maker'];
@@ -19,35 +19,46 @@ $acc = $_POST['acc'];
 $add_date = date('Y-m-d');
 $edit_date = date('Y-m-d');
 
-echo $sql = "insert into item3 (
+echo $sql = "insert into item (
 							item_code,
 							item_name,
 							unit,
-							useable,
-							client_name,
+							status,
+							client,
 							supply,
 							safe_stock,
-							maker,
-							grade,
-							color,
 							acc,
 							add_date,
-							edit_date
+							edit_date,
+							index1
 							)
 		values (
 			'" . $item_code . "',
 			'" . $item_name . "',
 			'" . $unit . "',
-			'" . $useable . "',
-			'" . $client_name . "',
+			'" . $status . "',
+			'" . $client . "',
 			'" . $supply . "',
 			'" . $safe_stock . "',
-			'" . $maker . "',
-			'" . $grade . "',
-			'" . $color . "',
 			'" . $acc . "',
 			'" . $add_date . "',
-			'" . $edit_date . "'
+			'" . $edit_date . "',
+			'3'
+				)";
+
+$res = mysqli_query($conn, $sql);
+
+echo $sql = "insert into item3 (
+							item_code,
+							maker,
+							grade,
+							color
+							)
+		values (
+			'" . $item_code . "',
+			'" . $maker . "',
+			'" . $grade . "',
+			'" . $color . "'
 				)";
 
 $res = mysqli_query($conn, $sql);
@@ -57,8 +68,8 @@ $res = mysqli_query($conn, $sql);
 echo $item_code;
 echo $item_name;
 echo $unit;
-echo $useable;
-echo $client_name;
+echo $status;
+echo $client;
 echo $supply;
 echo $safe_stock;
 echo $maker;

@@ -29,7 +29,7 @@
                 <div class="input"><input type="text" name="item_name"></div>
                 <div class="item">사용여부</div>
                 <div class="input">
-                    <select class="select" name="useable">
+                    <select class="select" name="status">
                         <option value='0' selected="selected">===선택===</option>
                         <option value='1'>사용</option>
                         <option value="2">미사용</option>

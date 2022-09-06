@@ -32,15 +32,15 @@
                         <th>상태</th>
                         <td>
                             <select name="status">
-                                <option value="1">양산</option>
-                                <option value="2">단종</option>
-                                <option value="3">A/S</option>
+                                <option value="3">양산</option>
+                                <option value="4">단종</option>
+                                <option value="5">A/S</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <th>외부업체</th>
-                        <td><input name="client_name" type="text" placeholder="외부업체가 없을경우 비워주세요."></td>
+                        <td><input name="client" type="text" placeholder="외부업체가 없을경우 비워주세요."></td>
                         <th>사급구분</th>
                         <td>
                             <select name="supply">
@@ -70,7 +70,7 @@
                         <th>비고</th>
                         <td colspan="3"><input name="acc" type="text"></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>사진</th>
                         <td>
                             <input class="short" name="photo" type="text" placeholder="보류">
@@ -81,7 +81,7 @@
                             <input class="short" name="paper" type="text" placeholder="보류">
                             <input class="btn" type="button" value="파일찾기">
                         </td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
             <div class="btn_section">

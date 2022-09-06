@@ -29,8 +29,7 @@
                     <tr>
                         <th>단가</th>
                         <td><input name="unit" type="text"></td>
-                        <th>Color</th>
-                        <td><input name="color" type="text"></td>
+
                     </tr>
                     <tr>
                         <th>Maker</th>
@@ -40,7 +39,7 @@
                     </tr>
                     <tr>
                         <th>외부업체</th>
-                        <td><input name="client_name" type="text"></td>
+                        <td><input name="client" type="text"></td>
                         <th>사급구분</th>
                         <td>
                             <select name="supply">
@@ -54,7 +53,7 @@
                         <td><input name="safe_stock" type="text"></td>
                         <th>사용여부</th>
                         <td>
-                            <select name="useable">
+                            <select name="status">
                                 <option value="1">사용</option>
                                 <option value="2">미사용</option>
                             </select>

@@ -3,20 +3,20 @@
 <?php
 $item_code = $_POST["item_code"];
 $item_name = $_POST["item_name"];
-$useable = $_POST["useable"];
+$status = $_POST["status"];
 
 
 /////////////////////////////////////////////////////////////////////검색
 //조건 중 하나라도 입력이 되었으면 WHERE 추가
-if ($item_code != null || $item_name != null || $useable > 0) {
-    $temp0 = "where";
+if ($item_code != null || $item_name != null || $status > 0) {
+    $temp0 = "";
 } else {
     $temp0 = "";
 }
 
 //검색조건 1
 if ($item_code != null) {
-    $temp1 = " item_code like '%" . $item_code . "%'";
+    $temp1 = " and item_code like '%" . $item_code . "%'";
     //검색O = 플래그1
     $flag1 = 1;
 } else {
@@ -33,7 +33,7 @@ if ($item_name != null) {
     }
     //앞에서 검색을 하지않아서 플래그0이 넘어왔으면 AND를 붙이지 않음
     else
-        $temp2 = " item_name like '%" . $item_name . "%'";
+        $temp2 = " and item_name like '%" . $item_name . "%'";
     //플래그 0이 넘어왔으나 여기서 검사를 했으니 플래그 1
     $flag1 = 1;
 } else {
@@ -41,18 +41,18 @@ if ($item_name != null) {
 }
 
 //검색조건 3
-if ($useable > 0) {
+if ($status > 0) {
     if ($flag1 == 1) {
-        $temp3 = " and useable like '" . $useable . "'";
+        $temp3 = " and status like '" . $status . "'";
     } else
-        $temp3 = " useable like '" . $useable . "'";
+        $temp3 = " and status like '" . $status . "'";
     $flag1 = 1;
 } else {
     $temp3 = "";
 }
 
 ///////////////////////////////////////////////////////////////////////SQL
-$sql = "select * from item3
+$sql = "select * from item where index1 = '3'
 " . $temp0 . "  
 " . $temp1 . "  
 " . $temp2 . " 
@@ -79,11 +79,15 @@ $res = mysqli_query($conn, $sql);
         /////////////////////////////////////////////////////////////////////테이블 뷰
         for (; $row = mysqli_fetch_array($res);) {
 
-            if ($row['useable'] == '1') {
-                $useable_value = "사용";
+            $sql01 = "select * from item3 where item_code='" . $row['item_code'] . "'";
+            $res01 = mysqli_query($conn, $sql01);
+            $row01 = mysqli_fetch_array($res01);
+
+            if ($row['status'] == '1') {
+                $status_value = "사용";
             }
-            if ($row['useable'] == '2') {
-                $useable_value = "미사용";
+            if ($row['status'] == '2') {
+                $status_value = "미사용";
             }
 
 
@@ -100,13 +104,13 @@ $res = mysqli_query($conn, $sql);
             <td class='td2'>" . $row['item_code'] . "</td>
             <td class='td3'>" . $row['item_name'] . "</td>
             <td class='td4'>" . $row['unit'] . "</td>
-            <td class='td5'>" . $row['color'] . "</td>
-            <td class='td6'>" . $row['maker'] . "</td>
-            <td class='td7'>" . $row['grade'] . "</td>
-            <td class='td8'>" . $row['client_name'] . "</td>
+            <td class='td5'>" . $row01['color'] . "</td>
+            <td class='td6'>" . $row01['maker'] . "</td>
+            <td class='td7'>" . $row01['grade'] . "</td>
+            <td class='td8'>" . $row['client'] . "</td>
             <td class='td9'>" . $supply_value . "</td>
             <td class='td10'>" . $row['safe_stock'] . "</td>
-            <td class='td11'>" . $useable_value . "</td>
+            <td class='td11'>" . $status_value . "</td>
             <td class='td12'>" . $row['acc'] . "</td>
             <form action='item3_edit.php' method='post' target='item3_edit'>
             <input type = 'hidden' name = 'id' value= " . $row['id'] . ">

@@ -12,6 +12,7 @@ $res = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/basic/bom/css/bottom_view_result.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,8 +23,8 @@ $res = mysqli_query($conn, $sql);
 
                 echo "
             <tr>
-            <td class='td'>ㄴ " . $row['child'] . "</td>
-            <form action='php/bottom_view_result_delete.php' method='post' target='bottom_view_result_delete'>
+            <td class='td'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ " . $row['child'] . "</td>
+            <form action='php/bottom_view_result_delete.php' method='post' target='_self'>
             <input type = 'hidden' name = 'id' value= " . $row['id'] . ">
             <td class='td_btn'><input type='submit' class='btn' value='삭제'></td>
             </form>
