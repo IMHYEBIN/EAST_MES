@@ -90,7 +90,7 @@ $res = mysqli_query($conn, $sql);
             <td class='td8'>" . $row['safe_stock'] . "</td>
             <td class='td9'>" . $row['acc'] . "</td>
             <td class='td10'>" . $status_value1 . "</td>
-            <form action='/basic/bom/bom_new.php' method='post' target='bom_new'>
+            <form action='/page/bom/bom_new.php' method='post' target='bom_new'>
             <input type = 'hidden' name = 'type' value= '아쎄이'>
             <input type = 'hidden' name = 'item_code' value= " . $row['item_code'] . ">
             <td class='td_btn'><input type='submit' class='btn' value='BOM보기'></td>

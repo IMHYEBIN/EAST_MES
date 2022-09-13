@@ -74,9 +74,10 @@
   .search-section .input input {
     width: 100%;
     height: 32px;
+    text-align: center;
   }
   
-  .search-section .input .select {
+  .search-section .input select {
     width: 100%;
     height: 32px;
     text-align: center;

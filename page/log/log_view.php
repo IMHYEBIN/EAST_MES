@@ -4,11 +4,12 @@
 $date = $_POST["date"];
 $time1 = $_POST["time1"];
 $time2 = $_POST["time2"];
+$work = $_POST["work"];
 
 
 /////////////////////////////////////////////////////////////////////검색
 //조건 중 하나라도 입력이 되었으면 WHERE 추가
-if ($date != null || ($time1 != null && $time2 != null)) {
+if ($date != null || ($time1 != null && $time2 != null) || $work != null) {
     $temp0 = "where";
 } else {
     $temp0 = "";
@@ -40,11 +41,27 @@ if ($time1 != null && $time2 != null) {
     $temp2 = "";
 }
 
+//검색조건 3
+if ($work != null) {
+    //앞에서 검색을 해서 플래그1이 넘어왔으면 AND를 붙임
+    if ($flag1 == 1) {
+        $temp3 = " and acc like '%" . $work . "%'";
+    }
+    //앞에서 검색을 하지않아서 플래그0이 넘어왔으면 AND를 붙이지 않음
+    else
+        $temp3 = "acc like '%" . $work . "%'";
+    //플래그 0이 넘어왔으나 여기서 검사를 했으니 플래그 1
+    $flag1 = 1;
+} else {
+    $temp3 = "";
+}
+
 ///////////////////////////////////////////////////////////////////////SQL
 $sql = "select * from log
 " . $temp0 . "  
 " . $temp1 . "  
-" . $temp2 . " order by id desc";
+" . $temp2 . "
+" . $temp3 . " order by id desc";
 
 $res = mysqli_query($conn, $sql);
 ?>

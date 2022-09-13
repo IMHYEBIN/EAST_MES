@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+<?php $conn = new mysqli("localhost", "server", "00000000", "dataset"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +41,18 @@
                     </tr>
                     <tr>
                         <th>외부업체</th>
-                        <td><input name="client" type="text"></td>
+                        <td>
+                            <select name="client" required>
+                                <option value="">==선택==</option>
+                                <?php
+                                $sql = "SELECT * FROM client";
+                                $res = mysqli_query($conn, $sql);
+                                for (; $row = mysqli_fetch_array($res);) {
+                                    echo "<option value='" . $row['cop_name'] . "'>" . $row['cop_name'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </td>
                         <th>사급구분</th>
                         <td>
                             <select name="supply">

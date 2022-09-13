@@ -26,8 +26,18 @@
                 <div class="input"><input type="date" name="date" value="<?= date('Y-m-d') ?>"></div>
                 <div class="item">시간</div>
                 <div class="input"><input type="time" name="time1" value="<?= date('00:00') ?>"></div>
-                <div>~</div>                
+                <div>~</div>
                 <div class="input"><input type="time" name="time2" value="<?= date('23:59') ?>"></div>
+                <div class="item">작업구분</div>
+                <div class="input">
+                    <select name="work">
+                        <option value="">==선택==</option>
+                        <option value="INSERT">INSERT</option>
+                        <option value="UPDATE">UPDATE</option>
+                        <option value="VIEW">VIEW</option>
+                        <option value="DELETE">DELETE</option>
+                    </select>
+                </div>
 
                 <button type="reset" class="btn">초기화</button>
                 <button type="submit" class="btn">검색</button>
@@ -37,7 +47,7 @@
                     <div class="th1">번호</div>
                     <div class="th2">날짜</div>
                     <div class="th3">시간</div>
-                    <div class="th4">페이지</div>                    
+                    <div class="th4">페이지</div>
                     <div class="th5">설명</div>
                 </div>
 

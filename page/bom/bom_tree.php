@@ -242,7 +242,7 @@ $parent = $_POST["parent"];
 	</div>
 
 
-	<form method="post" target="view_frame" action="/basic/bom/bom_view.php">
+	<form method="post" target="view_frame" action="/page/bom/bom_view.php">
 		<input type="text" name="select_bom" id="select_bom" style="display: none;">
 		<input type="submit" id="submit" style="display: none;">
 	</form>
