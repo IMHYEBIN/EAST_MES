@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/item3_new.css">
-    <title>East Company | 원재료관리 :: NEW</title>
+    <title>East Company</title>
 </head>
 
 <body>
@@ -31,13 +31,47 @@
                     <tr>
                         <th>단가</th>
                         <td><input name="unit" type="text"></td>
-
+                        <th>Color</th>
+                        <td>
+                            <select name="color" required>
+                                <option value="">==선택==</option>
+                                <?php
+                                $sql = "SELECT * FROM item3_color";
+                                $res = mysqli_query($conn, $sql);
+                                for (; $row = mysqli_fetch_array($res);) {
+                                    echo "<option value='" . $row['color'] . "'>" . $row['color'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Maker</th>
-                        <td><input name="maker" type="text"></td>
+                        <td>
+                            <select name="maker" required>
+                                <option value="">==선택==</option>
+                                <?php
+                                $sql = "SELECT * FROM item3_maker";
+                                $res = mysqli_query($conn, $sql);
+                                for (; $row = mysqli_fetch_array($res);) {
+                                    echo "<option value='" . $row['maker'] . "'>" . $row['maker'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </td>
                         <th>Grade</th>
-                        <td><input name="grade" type="text"></td>
+                        <td>
+                        <select name="grade" required>
+                                <option value="">==선택==</option>
+                                <?php
+                                $sql = "SELECT * FROM item3_grade";
+                                $res = mysqli_query($conn, $sql);
+                                for (; $row = mysqli_fetch_array($res);) {
+                                    echo "<option value='" . $row['grade'] . "'>" . $row['grade'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>외부업체</th>

@@ -69,7 +69,7 @@ $res = mysqli_query($conn, $sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/item3_view.css">
-    <title>East Company | 아쎄이관리 :: VIEW</title>
+    <title>East Company</title>
 </head>
 
 <body>
@@ -138,7 +138,7 @@ $res = mysqli_query($conn, $sql);
         function popup_edit() {
 
             //window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
-            window.open("item3_edit.php", "item3_edit", "width=1110, height=320, top=200, left=100");
+            window.open("item3_edit.php", "item3_edit", "width=1110, height=350, top=200, left=100");
 
         }
     </script>

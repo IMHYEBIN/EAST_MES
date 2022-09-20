@@ -10,7 +10,7 @@
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="js/adress.js"></script>
     <link rel="stylesheet" href="css/client_new.css">
-    <title>East Company | 거래처관리 :: NEW</title>
+    <title>East Company</title>
 </head>
 
 <body>

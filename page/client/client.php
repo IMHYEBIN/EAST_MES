@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="css/client.css?ver=121">
-    <title>East Company | 거래처관리</title>
+    <title>East Company</title>
 </head>
 
 <body>

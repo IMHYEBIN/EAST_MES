@@ -20,7 +20,7 @@ $row01 = mysqli_fetch_array($res01);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/item3_new.css">
-    <title>East Company | 원재료관리 :: EDIT</title>
+    <title>East Company</title>
 </head>
 
 <body>
@@ -43,13 +43,46 @@ $row01 = mysqli_fetch_array($res01);
                         <th>단가</th>
                         <td><input name="unit" type="text" value="<?= $row['unit']; ?>"></td>
                         <th>Color</th>
-                        <td><input name="color" type="text" value="<?= $row01['color']; ?>"></td>
+                        <td>
+                            <select name="color">
+                                <?php
+                                echo "<option value='" . $row01['color'] . "' selected>" . $row01['color'] . "</option>";
+                                $sql02 = "select * from item3_color";
+                                $res02 = mysqli_query($conn, $sql02);
+                                for (; $row02 = mysqli_fetch_array($res02);) {
+                                    echo "<option value='" . $row02['color'] . "'>" . $row02['color'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Maker</th>
-                        <td><input name="maker" type="text" value="<?= $row01['maker']; ?>"></td>
+                        <td>
+                            <select name="maker">
+                                <?php
+                                echo "<option value='" . $row01['maker'] . "' selected>" . $row01['maker'] . "</option>";
+                                $sql03 = "select * from item3_maker";
+                                $res03 = mysqli_query($conn, $sql03);
+                                for (; $row03 = mysqli_fetch_array($res03);) {
+                                    echo "<option value='" . $row03['maker'] . "'>" . $row03['maker'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </td>
                         <th>Grade</th>
-                        <td><input name="grade" type="text" value="<?= $row01['grade']; ?>"></td>
+                        <td>
+                            <select name="grade">
+                                <?php
+                                echo "<option value='" . $row01['grade'] . "' selected>" . $row01['grade'] . "</option>";
+                                $sql04 = "select * from item3_grade";
+                                $res04 = mysqli_query($conn, $sql04);
+                                for (; $row04 = mysqli_fetch_array($res04);) {
+                                    echo "<option value='" . $row04['grade'] . "'>" . $row04['grade'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>외부업체</th>
@@ -57,10 +90,10 @@ $row01 = mysqli_fetch_array($res01);
                             <select name="client">
                                 <?php
                                 echo "<option value='" . $row['client'] . "' selected>" . $row['client'] . "</option>";
-                                $sql00 = "select * from client";
-                                $res00 = mysqli_query($conn, $sql00);
-                                for (; $row00 = mysqli_fetch_array($res00);) {
-                                    echo "<option value='" . $row00['cop_name'] . "'>" . $row00['cop_name'] . "</option>";
+                                $sql05 = "select * from client";
+                                $res05 = mysqli_query($conn, $sql05);
+                                for (; $row05 = mysqli_fetch_array($res05);) {
+                                    echo "<option value='" . $row05['cop_name'] . "'>" . $row05['cop_name'] . "</option>";
                                 }
                                 ?>
                             </select>

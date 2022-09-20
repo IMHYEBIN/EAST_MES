@@ -1,0 +1,103 @@
+:root {
+  --font-family: "SCDream6";
+  --background-color: #f0f4f5;
+  --light-color: #e1e2e1;
+  --dark-color: #363543;
+}
+
+@font-face {
+  font-family: "SCDream6";
+  src: url(/font/SCDream6.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+/* table,
+tr,
+th,
+td {
+  border: solid 1px black;
+} */
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  padding: 12px 12px;
+}
+
+.title {
+  font-size: 24px;
+  color: var(--dark-color);
+}
+
+.main_section{
+    margin-top: 10px;
+}
+
+th {
+  width: 20vw;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+td {
+  width: 30vw;
+  height: 10vh;
+}
+
+td input {
+  width: 100%;
+  padding: 5px 5px;
+}
+
+td select {
+  width: 100%;
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.btn_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.btn {
+  width: 10vw;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 5px;
+  padding: 10px 5px;
+  border: 0;
+}
+
+td .short{
+width: 18.9vw;
+}
+
+.center{
+text-align: center;
+}
+
+.address_btn{
+width: 100%;
+background-color: #5b596e;
+}
+
+.add_btn{
+background-color: seagreen;
+}
+
+.back_btn{
+    margin-left: 5px;
+}

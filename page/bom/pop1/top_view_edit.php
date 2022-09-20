@@ -56,7 +56,7 @@ $res = mysqli_query($conn, $sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../bom/css/pop2_top_view.css">
-    <title>East Company | BOM등록 :: TOP_VIEW</title>
+    <title>East Company</title>
 </head>
 
 <body style="background-color: #f0f4f5;">

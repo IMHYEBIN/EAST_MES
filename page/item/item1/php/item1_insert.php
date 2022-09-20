@@ -29,7 +29,8 @@ $sql = "insert into item (
 							acc,
 							add_date,
 							edit_date,
-							index1
+							index1,
+							now_q
 							)
 		values (
 			'" . $item_code . "',
@@ -42,7 +43,8 @@ $sql = "insert into item (
 			'" . $acc . "',
 			'" . $add_date . "',
 			'" . $edit_date . "',
-			'1'
+			'1',
+			'0' 
 				)";
 
 $res = mysqli_query($conn, $sql);
@@ -76,6 +78,8 @@ echo $paper;
 echo $acc;
 echo $add_date;
 echo $edit_date;
+echo $index1;
+echo $now_q; //재고 0으로 추가
 
 ////////////////////////////////////////////로그 남기기
 $date = date('Y-m-d');

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="css/item3.css">
-    <title>East Company | 원재료관리</title>
+    <title>East Company</title>
 </head>
 
 <body>
@@ -65,7 +65,7 @@
         function popupNew() {
 
             //window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
-            window.open("item3_new.php", "item3_new", "width=1110, height=320, top=200, left=100");
+            window.open("item3_new.php", "item3_new", "width=1110, height=350, top=200, left=100");
 
         }
     </script>

@@ -17,7 +17,7 @@ $row = mysqli_fetch_array($res);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/machine_new.css">
-    <title>East Company | 설비관리 :: EDIT</title>
+    <title>East Company</title>
 </head>
 
 <body>

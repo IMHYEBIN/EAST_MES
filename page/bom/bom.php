@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="css/bom.css">
-    <title>East Company | BOM관리</title>
+    <title>East Company</title>
 </head>
 
 <body>
