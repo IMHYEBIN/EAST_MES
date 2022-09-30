@@ -39,25 +39,30 @@ td {
 }
 
 .td2{
+  padding-left: 4vw;
   width: 13vw;
 }
 
 .td3{
-  width: 13vw;
+  width: 10vw;
 }
 
 .td4{
-  width: 13vw;
+  width: 8vw;
 }
 
 .td5{
-  width: 8vw;
-  text-align: center;
+  padding-left: 3vw;
+  width: 10vw;
 }
 
-.td10{
-  width: 4vw;
-  padding-right: 1vw;
+.td6{
+  padding-left: 4vw;
+  width: 10vw;
+}
+
+.td7{
+  width: 8vw;
 }
 
 .btn{

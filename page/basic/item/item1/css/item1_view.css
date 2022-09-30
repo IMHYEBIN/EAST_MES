@@ -55,7 +55,7 @@ td {
 }
 
 .td6{
-  width: 8vw;
+  width: 11vw;
 }
 
 .td7{
@@ -67,14 +67,10 @@ td {
 }
 
 .td9{
-  width: 10vw;
+  width: 32vw;
 }
 
 .td10{
-  width: 25vw;
-}
-
-.td_btn{
   width: 4vw;
   padding-right: 1vw;
 }

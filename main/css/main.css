@@ -1,3 +1,15 @@
+:root {
+  --font-family: "SCDream6";
+  --background-color: #e1e2e1;
+  --light-color: #f0f4f5;
+  --dark-color: #363543;
+}
+
+@font-face {
+  font-family: "SCDream6";
+  src: url(/font/SCDream6.otf);
+}
+
 html,
 body {
   height: 100vh;
@@ -6,9 +18,68 @@ body {
 * {
   padding: 0;
   margin: 0;
+  font-family: var(--font-family);
 }
 
-img {
+.container {
   width: 100%;
-  height: calc(100% - 5px);
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.left_section {
+  width: 50%;
+  height: 100%;
+}
+
+.left_section__bom {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right_section {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right_section__stock {
+  width: 100%;
+  height: 50%;
+  background-color: var(--light-color);
+}
+
+.right_section__stock .title {
+  width: 20%;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 5px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px 0px;
+  margin: 3px;
+}
+
+.right_section__stock table {
+  width: 100%;
+}
+
+th{
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.right_section__plan {
+  width: 100%;
+  height: 50%;
+  background-color: var(--background-color);
 }

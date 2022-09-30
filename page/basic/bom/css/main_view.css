@@ -1,0 +1,139 @@
+:root {
+  --font-family: "SCDream6";
+  --background-color: #f0f4f5;
+  --light-color: #e1e2e1;
+  --dark-color: #363543;
+  --search-color: #4682B4;
+}
+
+@font-face {
+  font-family: "SCDream6";
+  src: url(/font/SCDream6.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+iframe {
+  width: 30%;
+}
+
+table {
+  width: 70%;
+  table-layout: fixed;
+}
+
+.td {
+  display: block;
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 24px;
+  margin-bottom: 0.5%;
+}
+
+.td1 {
+  width: 12%;
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.td2 {
+  width: 9%;
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.td3 {
+  width: 9%;
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.td4 {
+  width: 9%;
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.td5 {
+  width: 8%;
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.td6 {
+  width: 10%;
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.td7 {
+  width: 8%;
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.td8 {
+  width: 9%;
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.td9 {
+  width: 13%;
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.td10 {
+  width: 7%;
+  line-height: 33px;
+}
+.td11 {
+  width: 5%;
+}
+
+.show_btn {
+  width: 80px;
+  color: var(--light-color);
+  border-radius: 5px;
+  padding-top: 4px;
+  padding-bottom: 6px;
+  background-color: var(--search-color);
+  border: none;
+  margin-right: 3px;
+}
+
+.add_btn {
+  width: 80px;
+  color: var(--light-color);
+  border-radius: 5px;
+  padding-top: 4px;
+  padding-bottom: 6px;
+  background-color: seagreen;
+  border: none;
+  margin-right: 3px;
+}
+
+.all_btn {
+  width: 80px;
+  background-color: #DAA520;
+  border-radius: 5px;
+  padding-top: 4px;
+  padding-bottom: 6px;
+  color: var(--background-color);
+  border: none;
+  margin-right: 3px;
+}

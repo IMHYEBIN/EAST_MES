@@ -17,14 +17,6 @@
     font-family: var(--font-family);
   }
   
-table{
-  width: 100%;
-}
-
-/* .th_1floor{
-  border-bottom: 1px solid #fff;
-} */
-
   .container {
     height: 100vh;
     display: flex;
@@ -115,6 +107,45 @@ table{
     color: var(--background-color);
   }
   
+  .th1{
+    width: 5vw;
+  }
+  
+  .th2{
+    width: 10vw;
+  }
+  
+  .th3{
+    width: 10vw;
+  }
+  
+  .th4{
+    width: 7vw;
+  }
+  
+  .th5{
+    width: 7vw;
+  }
+  
+  .th6{
+    width: 10vw;
+  }
+  
+  .th7{
+    width: 10vw;
+  }
+  
+  .th8{
+    width: 10vw;
+  }
+  
+  .th9{
+    width: 28vw;
+  }
+  
+  .th10{
+    width: 3vw;
+  }
 
   iframe {
     width: 100%;

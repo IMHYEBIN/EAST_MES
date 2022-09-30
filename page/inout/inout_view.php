@@ -3,14 +3,20 @@
 <?php
 $item_code = $_POST["item_code"];
 $item_name = $_POST["item_name"];
-$status = $_POST["status"];
+$index1 = $_POST["index1"];
+$type = $_POST["type"];
 
 
 /////////////////////////////////////////////////////////////////////검색
+if ($item_code != null || $item_name != null || $index1 > 0 || $type > 0) {
+    $temp0 = "where";
+} else {
+    $temp0 = "";
+}
 
 //검색조건 1
 if ($item_code != null) {
-    $temp1 = "and item_code like '%" . $item_code . "%'";
+    $temp1 = "in_out.item_code like '%" . $item_code . "%'";
     //검색O = 플래그1
     $flag1 = 1;
 } else {
@@ -23,11 +29,11 @@ if ($item_code != null) {
 if ($item_name != null) {
     //앞에서 검색을 해서 플래그1이 넘어왔으면 AND를 붙임
     if ($flag1 == 1) {
-        $temp2 = "and item_name like '%" . $item_name . "%'";
+        $temp2 = "and item.item_name like '%" . $item_name . "%'";
     }
     //앞에서 검색을 하지않아서 플래그0이 넘어왔으면 AND를 붙이지 않음
     else
-        $temp2 = "and item_name like '%" . $item_name . "%'";
+        $temp2 = "item.item_name like '%" . $item_name . "%'";
     //플래그 0이 넘어왔으나 여기서 검사를 했으니 플래그 1
     $flag1 = 1;
 } else {
@@ -35,22 +41,34 @@ if ($item_name != null) {
 }
 
 //검색조건 3
-if ($status > 0) {
+if ($index1 > 0) {
     if ($flag1 == 1) {
-        $temp3 = " and status like '" . $status . "'";
+        $temp3 = " and item.index1 like '" . $index1 . "'";
     } else
-        $temp3 = " and status like '" . $status . "'";
+        $temp3 = "item.index1 like '" . $index1 . "'";
     $flag1 = 1;
 } else {
     $temp3 = "";
 }
 
+//검색조건 4
+if ($type > 0) {
+    if ($flag1 == 1) {
+        $temp4 = " and in_out.type like '" . $type . "'";
+    } else
+        $temp4 = "in_out.type like '" . $type . "'";
+    $flag1 = 1;
+} else {
+    $temp4 = "";
+}
+
 ///////////////////////////////////////////////////////////////////////SQL
-$sql = "select * from item where index1 = '1'
+$sql = "select in_out.id, in_out.date, in_out.item_code, item.item_name, in_out.type, in_out.unit, in_out.inout_q, in_out.inout_a, item.safe_stock, in_out.acc from in_out join item on (in_out.item_code = item.item_code)
 " . $temp0 . "  
 " . $temp1 . "  
 " . $temp2 . " 
-" . $temp3 . " order by id desc";
+" . $temp3 . "
+" . $temp4 . " order by in_out.id desc";
 
 $res = mysqli_query($conn, $sql);
 ?>
@@ -62,7 +80,7 @@ $res = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/item1_view.css">
+    <link rel="stylesheet" href="css/inout_view.css">
     <title>East Company</title>
 </head>
 
@@ -73,14 +91,14 @@ $res = mysqli_query($conn, $sql);
         /////////////////////////////////////////////////////////////////////테이블 뷰
         for (; $row = mysqli_fetch_array($res);) {
 
-            if ($row['status'] == '3') {
-                $status_value = "양산";
-            }else if ($row['status'] == '4') {
-                $status_value = "단종";
-            }else if ($row['status'] == '5') {
-                $status_value = "A/S";
-            }else{
-                $status_value = "ERROR";
+            if ($row['type'] == '1') {
+                $type_value = "입고";
+                $mark = "+";
+            } else if ($row['type'] == '2') {
+                $type_value = "출고";
+                $mark = "-";
+            } else {
+                $type_value = "ERROR";
             }
 
 
@@ -91,21 +109,23 @@ $res = mysqli_query($conn, $sql);
                 $supply_value = "무상";
             }
 
+
+            $sql00 = "select * from item where item_code = '" . $row['item_code'] . "'";
+            $res00 = mysqli_query($conn, $sql00);
+            $row00 = mysqli_fetch_array($res00);
+
             echo "
             <tr>
             <td class='td1' name='id'>" . $row['id'] . "</td>
-            <td class='td2'>" . $row['item_code'] . "</td>
-            <td class='td3'>" . $row['item_name'] . "</td>
-            <td class='td4'>" . $row['unit'] . "</td>
-            <td class='td5'>" . $status_value . "</td>
-            <td class='td6'>" . $row['client'] . "</td>
-            <td class='td7'>" . $supply_value . "</td>
-            <td class='td8'>" . $row['safe_stock'] . "</td>
-            <td class='td9'>" . $row['acc'] . "</td>
-            <form action='item1_edit.php' method='post' target='item1_edit'>
-            <input type = 'hidden' name = 'id' value= " . $row['id'] . ">
-            <td class='td10'><input type='submit' class='btn' onclick='popup_edit()' value='수정'></td>
-            </form>
+            <td class='td2'>" . $row['date'] . "</td>
+            <td class='td3'>" . $row['item_code'] . "</td>
+            <td class='td4'>" . $row00['item_name'] . "</td>
+            <td class='td5'>" . $type_value . "</td>
+            <td class='td6'>" . $row00['unit'] . "</td>
+            <td class='td7'>" . $mark . "" . $row['inout_q'] . "</td>
+            <td class='td8'>" . $row['inout_a'] . "</td>
+            <td class='td9'>" . $row00['now_q'] . "</td>
+            <td class='td10'>" . $row['acc'] . "</td>
             </tr>
             ";
         }
@@ -113,7 +133,7 @@ $res = mysqli_query($conn, $sql);
         ////////////////////////////////////////////로그 남기기
         $date = date('Y-m-d');
         $time = date('H:i:s');
-        $location = "item1_view.php";
+        $location = "inout_view.php";
         $acc = "아쎄이정보 VIEW";
 
         $sql = "insert into log (date, time, location, acc) 
@@ -127,7 +147,7 @@ $res = mysqli_query($conn, $sql);
         function popup_edit() {
 
             //window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
-            window.open("item1_edit.php", "item1_edit", "width=1110, height=320, top=200, left=100");
+            window.open("inout_edit.php", "inout_edit", "width=1110, height=320, top=200, left=100");
 
         }
     </script>

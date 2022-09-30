@@ -118,6 +118,7 @@
   opacity: 0;
   pointer-events: none;
 }
+
 .sidebar .nav-links li .sub-menu {
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
@@ -157,9 +158,23 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li .sub-menu .link_name {
-  display: none;
+  /* display: none; 혜빈 주석처리 0921 */
+  opacity: 1; /*혜빈 추가 0921*/
 }
 .sidebar.close .nav-links li .sub-menu .link_name {
+  font-size: 18px;  
+  opacity: 1;
+  display: block;
+}
+
+.sidebar .nav-links li .sub-menu li .link_name_noclick {
+  /*혜빈 추가 0921*/
+  cursor: default;
+  opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu li .link_name_noclick {
+  /*혜빈 추가 0921*/
+  color: #fff;
   font-size: 18px;
   opacity: 1;
   display: block;

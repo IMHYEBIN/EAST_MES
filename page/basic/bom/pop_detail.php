@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php $conn = mysqli_connect('localhost', 'server', '00000000', 'dataset'); ?>
 <?php
-$parent = $_POST["parent"];
+$parent = $_POST["detail__item_code"];
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ $parent = $_POST["parent"];
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
 	<!-- CSS -->
-	<link rel="stylesheet" href="css/bom_tree.css">
+	<link rel="stylesheet" href="css/pop_detail.css">
 	<title>Document</title>
 </head>
 
@@ -30,6 +30,11 @@ $parent = $_POST["parent"];
 			$sql = "select * from bom where parent like '" . $parent . "'";
 			$res = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_array($res);
+
+			if ($row['parent'] == null) {
+				$row['parent'] = "등록된 BOM이 없습니다.";
+			}
+			
 			//ROOT
 			echo "<li class='jstree-open' id = 'root'>" . $row['parent'];
 
@@ -242,7 +247,7 @@ $parent = $_POST["parent"];
 	</div>
 
 
-	<form method="post" target="view_frame" action="/page/bom/bom_view.php">
+	<form method="post" target="view_frame" action="/page/basic/bom/bom_view.php">
 		<input type="text" name="select_bom" id="select_bom" style="display: none;">
 		<input type="submit" id="submit" style="display: none;">
 	</form>

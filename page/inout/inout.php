@@ -38,7 +38,7 @@
                 </div>
                 <div class="item">입출고구분</div>
                 <div class="input">
-                    <select class="select" name="status">
+                    <select class="select" name="type">
                         <option value='0' selected="selected">===선택===</option>
                         <option value='1'>입고</option>
                         <option value="2">출고</option>
@@ -51,15 +51,16 @@
                 <div class="table-header">
                     <table>
                         <tr>
-                            <th>번호</th>
-                            <th>제품코드</th>
-                            <th>제품명</th>
-                            <th>입출고구분</th>
-                            <th>단가</th>
-                            <th>수량</th>
-                            <th>금액</th>
-                            <th>비고</th>
-                            <th>관리</th>
+                            <th class="id">번호</th>
+                            <th class="date">날짜</th>
+                            <th class="item_code">제품코드</th>
+                            <th class="item_name">제품명</th>
+                            <th class="type">입출고구분</th>
+                            <th class="unit">단가</th>
+                            <th class="inout_q">입출고수량</th>
+                            <th class="inout_a">금액</th>
+                            <th class="safe_stock">안전재고</th>
+                            <th class="acc">비고</th>
                         </tr>
                     </table>
                 </div>
