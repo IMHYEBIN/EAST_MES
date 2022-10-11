@@ -1,0 +1,57 @@
+:root {
+  --font-family: "SCDream6";
+  --background-color: #f0f4f5;
+  --light-color: #e1e2e1;
+  --dark-color: #363543;
+}
+
+@font-face {
+  font-family: "SCDream6";
+  src: url(/font/SCDream6.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.container-fluid {
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 80%;
+  margin: 0 !important;
+}
+
+input {
+  width: 100%;
+  height: 20px;
+}
+
+.date_input{
+height: 30px;
+}
+
+.btn {
+  width: 100px;
+}
+
+.factory_name {
+  width: 4%;
+}
+
+.machine_num {
+  width: 3%;
+}
+
+.machine_name {
+  width: 9%;
+}

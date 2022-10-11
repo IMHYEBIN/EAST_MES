@@ -7,6 +7,7 @@ $id = $_POST['id'];
 $machine_code = $_POST['machine_code'];
 $machine_name = $_POST['machine_name'];
 $ton = $_POST['ton'];
+$location = $_POST['location'];
 $acc = $_POST['acc'];
 $edit_date = date('Y-m-d');
 
@@ -15,6 +16,7 @@ $sql= "update machine set
 machine_code = '". $machine_code ."',
 machine_name = '". $machine_name ."',
 ton = '". $ton ."',
+location = '". $location ."',
 acc = '". $acc ."',
 edit_date = '". $edit_date ."'
 							

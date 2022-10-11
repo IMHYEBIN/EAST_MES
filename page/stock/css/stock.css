@@ -121,4 +121,32 @@ table{
     height: calc(100vh - 60px - 72px - 47px - 24px);
   }
   
+  .th1{
+    width: 10vw;
+    text-align: left;
+  }
   
+  .th2{
+    width: 30vw;
+    text-align: left;
+  }
+  
+  .th3{
+    width: 30vw;
+    text-align: left;
+  }
+  
+  .th4{
+    width: 5vw;
+    text-align: center;
+  }
+  
+  .th5{
+    width: 5vw;
+    text-align: center;
+  }
+  
+  .th7{
+    width: 5vw;
+    text-align: center;
+  }

@@ -20,24 +20,13 @@
                 <div class="title-section__text">
                     생산계획관리
                 </div>
+                <button type="button" class="btn" onclick="popupNew()">등록</button>
             </div>
             <div class="search-section">
                 <div class="item">날짜</div>
-                <div class="input"><input type="date" name="date" value="<?= date('Y-m-d') ?>"></div>
-                <div class="item">시간</div>
-                <div class="input"><input type="time" name="time1" value="<?= date('00:00') ?>"></div>
+                <div class="input"><input type="date" name="date1" value="<?= date('Y-m-d') ?>"></div>
                 <div>~</div>
-                <div class="input"><input type="time" name="time2" value="<?= date('23:59') ?>"></div>
-                <div class="item">작업구분</div>
-                <div class="input">
-                    <select name="work">
-                        <option value="">==선택==</option>
-                        <option value="INSERT">INSERT</option>
-                        <option value="UPDATE">UPDATE</option>
-                        <option value="VIEW">VIEW</option>
-                        <option value="DELETE">DELETE</option>
-                    </select>
-                </div>
+                <div class="input"><input type="date" name="date2" value="<?= date('Y-m-d') ?>"></div>
 
                 <button type="reset" class="btn">초기화</button>
                 <button type="submit" class="btn">검색</button>
@@ -45,10 +34,11 @@
             <div class="table-section">
                 <div class="table-header">
                     <div class="th1">번호</div>
-                    <div class="th2">날짜</div>
-                    <div class="th3">시간</div>
-                    <div class="th4">페이지</div>
-                    <div class="th5">설명</div>
+                    <div class="th2">제목</div>
+                    <div class="th3">등록날짜</div>
+                    <div class="th4">등록시간</div>
+                    <div class="th5">비고</div>
+                    <div class="th_btn">관리</div>
                 </div>
 
                 <iframe frameborder="0" name="view_frame" src="plan_view.php"></iframe>
@@ -56,6 +46,15 @@
             </div>
         </div>
     </form>
+    <!-- 팝업 스크립트 적용 -->
+    <script type="text/javascript">
+        function popupNew() {
+
+            //window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
+            window.open("plan_new.php", "plan_new", "width=1800, height=1000, top=200, left=100");
+
+        }
+    </script>
 </body>
 
 </html>

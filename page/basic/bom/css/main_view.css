@@ -3,7 +3,7 @@
   --background-color: #f0f4f5;
   --light-color: #e1e2e1;
   --dark-color: #363543;
-  --search-color: #4682B4;
+  --search-color: #4682b4;
 }
 
 @font-face {
@@ -26,10 +26,17 @@
 
 iframe {
   width: 30%;
+  height: 100vh;
+}
+
+.bom_list {
+  width: 70%;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 table {
-  width: 70%;
+  width: 100%;
   table-layout: fixed;
 }
 
@@ -56,13 +63,13 @@ table {
   overflow: hidden;
 }
 .td3 {
-  width: 9%;
+  width: 29%;
   line-height: 33px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 .td4 {
-  width: 9%;
+  width: 29%;
   line-height: 33px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -73,36 +80,12 @@ table {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.td6 {
-  width: 10%;
-  line-height: 33px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.td7 {
-  width: 8%;
-  line-height: 33px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
+
 .td8 {
   width: 9%;
   line-height: 33px;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-.td9 {
-  width: 13%;
-  line-height: 33px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.td10 {
-  width: 7%;
-  line-height: 33px;
-}
-.td11 {
-  width: 5%;
 }
 
 .show_btn {
@@ -129,7 +112,7 @@ table {
 
 .all_btn {
   width: 80px;
-  background-color: #DAA520;
+  background-color: #daa520;
   border-radius: 5px;
   padding-top: 4px;
   padding-bottom: 6px;

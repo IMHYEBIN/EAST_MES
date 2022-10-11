@@ -61,33 +61,34 @@ $res = mysqli_query($conn, $sql);
 
 <body style="background-color: #f0f4f5;">
     <div class="container">
-        <iframe frameborder="0" name="iframe__tree_view" src="/page/basic/bom/tree_view.php"></iframe>
-        <table>
-            <?php
-            /////////////////////////////////////////////////////////////////////테이블 뷰
-            for ($count = 1; $row = mysqli_fetch_array($res); $count++) {
+        <iframe frameborder="1" name="iframe__tree_view" src="/page/basic/bom/tree_view.php"></iframe>
+        <div class="bom_list">
+            <table>
+                <?php
+                /////////////////////////////////////////////////////////////////////테이블 뷰
+                for ($count = 1; $row = mysqli_fetch_array($res); $count++) {
 
-                if ($row['supply'] == '1') {
-                    $supply_value1 = "유상";
-                } else if ($row['supply'] == '2') {
-                    $supply_value1 = "무상";
-                }
+                    if ($row['supply'] == '1') {
+                        $supply_value1 = "유상";
+                    } else if ($row['supply'] == '2') {
+                        $supply_value1 = "무상";
+                    }
 
-                if ($row['status'] == '1') {
-                    $status_value1 = "사용";
-                } else if ($row['status'] == '2') {
-                    $status_value1 = "미사용";
-                }
+                    if ($row['status'] == '1') {
+                        $status_value1 = "사용";
+                    } else if ($row['status'] == '2') {
+                        $status_value1 = "미사용";
+                    }
 
-                if ($row['index1'] == '1') {
-                    $index1_value1 = "아쎄이";
-                } else if ($row['index1'] == '2') {
-                    $index1_value1 = "부자재";
-                } else if ($row['index1'] == '3') {
-                    $index1_value1 = "원재료";
-                }
+                    if ($row['index1'] == '1') {
+                        $index1_value1 = "아쎄이";
+                    } else if ($row['index1'] == '2') {
+                        $index1_value1 = "부자재";
+                    } else if ($row['index1'] == '3') {
+                        $index1_value1 = "원재료";
+                    }
 
-                echo "
+                    echo "
                     <tr class='td'>
                     <td class='td1'>
                     <form action='/page/basic/bom/pop_detail.php' method='post' target='pop_detail' name='frm'>
@@ -100,11 +101,7 @@ $res = mysqli_query($conn, $sql);
                     <td class='td3' id='item_code'>" . $row['item_code'] . "</td>
                     <td class='td4' id='item_name'>" . $row['item_name'] . "</td>
                     <td class='td5'>" . $row['unit'] . "</td>
-                    <td class='td6'>" . $row['client'] . "</td>
-                    <td class='td7'>" . $supply_value1 . "</td>
                     <td class='td8'>" . $row['safe_stock'] . "</td>
-                    <td class='td9'>" . $row['acc'] . "</td>
-                    <td class='td10'>" . $status_value1 . "</td>
                     <form action='/page/basic/bom/tree_view.php' method='post' target='iframe__tree_view'>
                     <input type = 'hidden' name = 'show__item_code' value= " . $row['item_code'] . ">
                     <input type = 'hidden' name = 'show__item_name' value= " . $row['item_name'] . ">
@@ -116,22 +113,23 @@ $res = mysqli_query($conn, $sql);
                     </form>
                     </tr>
                     ";
-            }
+                }
 
 
-            ////////////////////////////////////////////로그 남기기
-            // $date = date('Y-m-d');
-            // $time = date('H:i:s');
-            // $location = "bom_view.php";
-            // $acc = "BOM 팝업 정보 VIEW";
+                ////////////////////////////////////////////로그 남기기
+                // $date = date('Y-m-d');
+                // $time = date('H:i:s');
+                // $location = "bom_view.php";
+                // $acc = "BOM 팝업 정보 VIEW";
 
-            // $sql = "insert into log (date, time, location, acc) 
-            //  values ('" . $date . "', '" . $time . "', '" . $location . "', '" . $acc . "')";
-            // $res = mysqli_query($conn, $sql);
+                // $sql = "insert into log (date, time, location, acc) 
+                //  values ('" . $date . "', '" . $time . "', '" . $location . "', '" . $acc . "')";
+                // $res = mysqli_query($conn, $sql);
 
-            mysqli_close($conn); // 종료
-            ?>
-        </table>
+                mysqli_close($conn); // 종료
+                ?>
+            </table>
+        </div>
     </div>
 
     <!-- 팝업 스크립트 적용 -->

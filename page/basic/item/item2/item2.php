@@ -31,9 +31,9 @@
                 <div class="input">
                     <select class="select" name="status">
                         <option value='0' selected="selected">===선택===</option>
-                        <option value='3'>양산</option>
-                        <option value="4">단종</option>
-                        <option value="5">A/S</option>
+                        <option value='양산'>양산</option>
+                        <option value="단종">단종</option>
+                        <option value="A/S">A/S</option>
                     </select>
                 </div>
                 <button type="reset" class="btn">초기화</button>
@@ -45,15 +45,15 @@
                     <div class="th2">제품코드</div>
                     <div class="th3">제품명</div>
                     <div class="th4">단가</div>
-                    <div class="th5">상태</div>
-                    <div class="th6">외부업체</div>
-                    <div class="th7">사급구분</div>
-                    <div class="th8">안전재고</div>
-                    <div class="th9">성형작업</div>
-                    <div class="th10">공법</div>
-                    <div class="th11">C/T</div>
+                    <div class="th4">상태</div>
+                    <div class="th4">외부업체</div>
+                    <div class="th4">사급구분</div>
+                    <div class="th4">안전재고</div>
+                    <div class="th4">성형작업</div>
+                    <div class="th4">공법</div>
+                    <div class="th4">C/T</div>
                     <div class="th12">비고</div>
-                    <div class="th14">관리</div>
+                    <div class="th_btn">관리</div>
                 </div>
 
                 <iframe frameborder="0" name="view_frame" src="item2_view.php"></iframe>

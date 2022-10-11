@@ -84,6 +84,8 @@ $res = mysqli_query($conn, $sql);
                 $index1_value = "부자재";
             } else if ($row['index1'] == '3') {
                 $index1_value = "원재료";
+            } else if ($row['index1'] == '4') {
+                $index1_value = "반제품";
             } else {
                 $index1_value = "ERROR";
             }
@@ -140,7 +142,7 @@ $res = mysqli_query($conn, $sql);
                 <td class='td5'>+" . $in_q . "</td>
                 <td class='td5'>-" . $out_q . "</td>
                 <td class='td5'>" . $row['now_q'] . "</td>
-                <td class='td6'>" . $row['safe_stock'] . "</td>
+                <td class='td5'>" . $row['safe_stock'] . "</td>
                 <td class='td7' style='background-color:" . $status . ";'></td>
                 </tr>
                 ";

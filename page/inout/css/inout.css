@@ -80,12 +80,12 @@ table {
 }
 
 .search-section .input input {
-  width: 100%;
+  width: 90%;
   height: 32px;
 }
 
 .search-section .input .select {
-  width: 100%;
+  width: 90%;
   height: 32px;
   text-align: center;
 }
@@ -96,6 +96,7 @@ table {
   border-radius: 5px;
   padding-top: 4px;
   padding-bottom: 6px;
+  margin-left: 10px;
   color: var(--background-color);
 }
 
@@ -108,8 +109,7 @@ table {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 12px 24px;
+  padding: 12px 0px;
   border-radius: 5px;
   background-color: var(--dark-color);
   color: var(--background-color);
@@ -120,52 +120,42 @@ iframe {
   height: calc(100vh - 60px - 72px - 47px - 24px);
 }
 
-.id{
+.th1{
   width: 5vw;
-  text-align: left;
 }
 
-.date{
-  width: 8vw;
-  text-align: left;
-}
-
-.item_code{
+.th2{
   width: 10vw;
-  text-align: left;
 }
 
-.item_name{
-  width: 7vw;
-  text-align: left;
-} 
-
-.type{
-  width: 7vw;
-  text-align: left;
+.th3{
+  width: 15vw;
 }
 
-.unit{
-  width: 7vw;
-  text-align: left;
+.th4{
+  width: 15vw;
 }
 
-.inout_q{
-  width: 9vw;
-  text-align: left;
+.th5{
+  width: 10vw;
 }
 
-.inout_a{
-  width: 9vw;
-  text-align: left;
+.th6{
+  width: 5vw;
 }
 
-.safe_stock {
-  width: 9vw;
-  text-align: left;
+.th7{
+  width: 5vw;
 }
 
-.acc {
-  width: 20vw;
-  text-align: left;
+.th8{
+  width: 5vw;
+}
+
+.th9{
+  width: 5vw;
+}
+
+.th10{
+  width: 30vw;
 }

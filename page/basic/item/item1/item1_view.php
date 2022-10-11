@@ -73,11 +73,11 @@ $res = mysqli_query($conn, $sql);
         /////////////////////////////////////////////////////////////////////테이블 뷰
         for (; $row = mysqli_fetch_array($res);) {
 
-            if ($row['status'] == '3') {
+            if ($row['status'] == '양산') {
                 $status_value = "양산";
-            }else if ($row['status'] == '4') {
+            }else if ($row['status'] == '단종') {
                 $status_value = "단종";
-            }else if ($row['status'] == '5') {
+            }else if ($row['status'] == 'A/S') {
                 $status_value = "A/S";
             }else{
                 $status_value = "ERROR";
@@ -97,14 +97,14 @@ $res = mysqli_query($conn, $sql);
             <td class='td2'>" . $row['item_code'] . "</td>
             <td class='td3'>" . $row['item_name'] . "</td>
             <td class='td4'>" . $row['unit'] . "</td>
-            <td class='td5'>" . $status_value . "</td>
-            <td class='td6'>" . $row['client'] . "</td>
-            <td class='td7'>" . $supply_value . "</td>
-            <td class='td8'>" . $row['safe_stock'] . "</td>
+            <td class='td4'>" . $status_value . "</td>
+            <td class='td4'>" . $row['client'] . "</td>
+            <td class='td4'>" . $supply_value . "</td>
+            <td class='td4'>" . $row['safe_stock'] . "</td>
             <td class='td9'>" . $row['acc'] . "</td>
             <form action='item1_edit.php' method='post' target='item1_edit'>
             <input type = 'hidden' name = 'id' value= " . $row['id'] . ">
-            <td class='td10'><input type='submit' class='btn' onclick='popup_edit()' value='수정'></td>
+            <td class='td_btn'><input type='submit' class='btn' onclick='popup_edit()' value='수정'></td>
             </form>
             </tr>
             ";

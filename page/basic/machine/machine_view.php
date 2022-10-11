@@ -72,7 +72,8 @@ $res = mysqli_query($conn, $sql);
             <td class='td2'>" . $row['machine_code'] . "</td>
             <td class='td3'>" . $row['machine_name'] . "</td>
             <td class='td4'>" . $row['ton'] . "</td>
-            <td class='td5'>" . $row['acc'] . "</td>
+            <td class='td5'>" . $row['location'] . "</td>
+            <td class='td6'>" . $row['acc'] . "</td>
             <form action='machine_edit.php' method='post' target='machine_edit'>
             <input type = 'hidden' name = 'id' value= " . $row['id'] . ">
             <td class='td_btn'><input type='submit' class='btn' onclick='popup_edit()' value='수정'></td>
@@ -98,7 +99,7 @@ $res = mysqli_query($conn, $sql);
         function popup_edit() {
 
             //window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
-            window.open("machine_edit.php", "machine_edit", "width=1110, height=200, top=200, left=100");
+            window.open("machine_edit.php", "machine_edit", "width=1110, height=300, top=200, left=100");
 
         }
     </script>

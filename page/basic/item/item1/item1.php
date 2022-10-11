@@ -45,12 +45,12 @@
                     <div class="th2">제품코드</div>
                     <div class="th3">제품명</div>
                     <div class="th4">단가</div>
-                    <div class="th5">상태</div>
-                    <div class="th6">외부업체</div>
-                    <div class="th7">사급구분</div>
-                    <div class="th8">안전재고</div>
+                    <div class="th4">상태</div>
+                    <div class="th4">외부업체</div>
+                    <div class="th4">사급구분</div>
+                    <div class="th4">안전재고</div>
                     <div class="th9">비고</div>
-                    <div class="th10">관리</div>
+                    <div class="th_btn">관리</div>
                 </div>
 
                 <iframe frameborder="0" name="view_frame" src="item1_view.php"></iframe>

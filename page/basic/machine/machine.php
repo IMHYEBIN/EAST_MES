@@ -36,7 +36,8 @@
                     <div class="th2">설비코드</div>
                     <div class="th3">설비명</div>
                     <div class="th4">TON</div>                    
-                    <div class="th5">비고</div>
+                    <div class="th5">설치위치</div>                    
+                    <div class="th6">비고</div>
                     <div class="th_btn">관리</div>
                 </div>
 
@@ -50,7 +51,7 @@
         function popupNew() {
 
             //window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
-            window.open("machine_new.php", "machine_new", "width=1110, height=200, top=200, left=100");
+            window.open("machine_new.php", "machine_new", "width=1110, height=300, top=200, left=100");
 
         }
     </script>

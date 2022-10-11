@@ -104,13 +104,13 @@ $res = mysqli_query($conn, $sql);
             <td class='td2'>" . $row['item_code'] . "</td>
             <td class='td3'>" . $row['item_name'] . "</td>
             <td class='td4'>" . $row['unit'] . "</td>
-            <td class='td5'>" . $row01['color'] . "</td>
-            <td class='td6'>" . $row01['maker'] . "</td>
-            <td class='td7'>" . $row01['grade'] . "</td>
-            <td class='td8'>" . $row['client'] . "</td>
-            <td class='td9'>" . $supply_value . "</td>
-            <td class='td10'>" . $row['safe_stock'] . "</td>
-            <td class='td11'>" . $status_value . "</td>
+            <td class='td4'>" . $row01['color'] . "</td>
+            <td class='td4'>" . $row01['maker'] . "</td>
+            <td class='td4'>" . $row01['grade'] . "</td>
+            <td class='td4'>" . $row['client'] . "</td>
+            <td class='td4'>" . $supply_value . "</td>
+            <td class='td4'>" . $row['safe_stock'] . "</td>
+            <td class='td4'>" . $status_value . "</td>
             <td class='td12'>" . $row['acc'] . "</td>
             <form action='item3_edit.php' method='post' target='item3_edit'>
             <input type = 'hidden' name = 'id' value= " . $row['id'] . ">

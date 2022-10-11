@@ -39,8 +39,12 @@ $row = mysqli_fetch_array($res);
                     <tr>
                         <th>TON</th>
                         <td><input name="ton" type="text" value="<?= $row['ton']; ?>"></td>
+                        <th>설치위치</th>
+                        <td><input name="location" type="text" value="<?= $row['location']; ?>"></td>
+                    </tr>
+                    <tr>
                         <th>비고</th>
-                        <td><input name="acc" type="text" value="<?= $row['acc']; ?>"></td>
+                        <td colspan="3"><input name="acc" type="text" value="<?= $row['acc']; ?>"></td>
                     </tr>
                 </table>
             </div>

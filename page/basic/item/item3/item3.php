@@ -44,13 +44,13 @@
                     <div class="th2">제품코드</div>
                     <div class="th3">제품명</div>
                     <div class="th4">단가</div>                    
-                    <div class="th5">Color</div>
-                    <div class="th6">Maker</div>
-                    <div class="th7">Grade</div>
-                    <div class="th8">외부업체</div>
-                    <div class="th9">사급구분</div>
-                    <div class="th10">안전재고</div>
-                    <div class="th11">사용여부</div>
+                    <div class="th4">Color</div>
+                    <div class="th4">Maker</div>
+                    <div class="th4">Grade</div>
+                    <div class="th4">외부업체</div>
+                    <div class="th4">사급구분</div>
+                    <div class="th4">안전재고</div>
+                    <div class="th4">사용여부</div>
                     <div class="th12">비고</div>
                     <div class="th_btn">관리</div>
                 </div>

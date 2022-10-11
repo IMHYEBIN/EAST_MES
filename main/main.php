@@ -44,6 +44,8 @@ $res = mysqli_query($conn, $sql);
                             $index1_value = "부자재";
                         } else if ($row['index1'] == '3') {
                             $index1_value = "원재료";
+                        } else if ($row['index1'] == '4') {
+                            $index1_value = "반제품";
                         } else {
                             $index1_value = "ERROR";
                         }
@@ -108,7 +110,15 @@ $res = mysqli_query($conn, $sql);
                     ?>
                 </table>
             </div>
-            <div class="right_section__plan">생산계획 업데이트 예정</div>
+            <div class="right_section__plan">
+                <div class="title">생산계획</div>
+                <table>
+                    <th>번호</th>
+                    <th>날짜</th>
+                    <th>담당자</th>
+                    <th>관리</th>
+                </table>
+            </div>
         </div>
     </div>
 </body>

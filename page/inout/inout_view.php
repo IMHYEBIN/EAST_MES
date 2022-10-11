@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php $conn = mysqli_connect('localhost', 'server', '00000000', 'dataset'); ?>
 <?php
+$date = $_POST["date"];
 $item_code = $_POST["item_code"];
 $item_name = $_POST["item_name"];
 $index1 = $_POST["index1"];
@@ -8,7 +9,7 @@ $type = $_POST["type"];
 
 
 /////////////////////////////////////////////////////////////////////검색
-if ($item_code != null || $item_name != null || $index1 > 0 || $type > 0) {
+if ($date != null || $item_code != null || $item_name != null || $index1 > 0 || $type > 0) {
     $temp0 = "where";
 } else {
     $temp0 = "";
@@ -62,13 +63,29 @@ if ($type > 0) {
     $temp4 = "";
 }
 
+//검색조건 5
+if ($date != null) {
+    //앞에서 검색을 해서 플래그1이 넘어왔으면 AND를 붙임
+    if ($flag1 == 1) {
+        $temp5 = "and in_out.date like '" . $date . "'";
+    }
+    //앞에서 검색을 하지않아서 플래그0이 넘어왔으면 AND를 붙이지 않음
+    else
+        $temp5 = "in_out.date like '" . $date . "'";
+    //플래그 0이 넘어왔으나 여기서 검사를 했으니 플래그 1
+    $flag1 = 1;
+} else {
+    $temp5 = "";
+}
+
 ///////////////////////////////////////////////////////////////////////SQL
 $sql = "select in_out.id, in_out.date, in_out.item_code, item.item_name, in_out.type, in_out.unit, in_out.inout_q, in_out.inout_a, item.safe_stock, in_out.acc from in_out join item on (in_out.item_code = item.item_code)
 " . $temp0 . "  
 " . $temp1 . "  
 " . $temp2 . " 
 " . $temp3 . "
-" . $temp4 . " order by in_out.id desc";
+" . $temp4 . "
+" . $temp5 . " order by in_out.id desc";
 
 $res = mysqli_query($conn, $sql);
 ?>
@@ -134,7 +151,7 @@ $res = mysqli_query($conn, $sql);
         $date = date('Y-m-d');
         $time = date('H:i:s');
         $location = "inout_view.php";
-        $acc = "아쎄이정보 VIEW";
+        $acc = "입출고관리 VIEW";
 
         $sql = "insert into log (date, time, location, acc) 
 		 values ('" . $date . "', '" . $time . "', '" . $location . "', '" . $acc . "')";

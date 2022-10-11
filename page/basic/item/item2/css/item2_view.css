@@ -34,55 +34,27 @@ td {
   padding-bottom: 1vh;
 }
 
-.td1{
+.td1 {
   width: 5vw;
 }
 
-.td2{
-  width: 10vw;
+.td2 {
+  width: 15vw;
 }
 
-.td3{
-  width: 11vw;
+.td3 {
+  width: 15vw;
 }
 
-.td4{
-  width: 7.5vw;
+.td4 {
+  width: 5.625vw;
 }
 
-.td5{
-  width: 8vw;
+.td12 {
+  width: 15vw;
 }
 
-.td6{
-  width: 11vw;
-}
-
-.td7{
-  width: 10.5vw;
-}
-
-.td8{
-  width: 10vw;
-}
-
-.td9{
-  width: 8vw;
-}
-
-.td10{
-  width: 7vw;
-}
-
-.td11{
-  width: 7vw;
-}
-
-.td12{
-  width: 10vw;
-}
-
-.td_btn{
+.td_btn {
   width: 4vw;
   padding-right: 1vw;
 }

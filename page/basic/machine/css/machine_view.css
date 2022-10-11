@@ -43,7 +43,7 @@ td {
 }
 
 .td3 {
-  width: 10vw;
+  width: 15vw;
 }
 
 .td4 {
@@ -51,7 +51,11 @@ td {
 }
 
 .td5 {
-  width: 55vw;
+  width: 10vw;
+}
+
+.td6 {
+  width: 40vw;
 }
 
 

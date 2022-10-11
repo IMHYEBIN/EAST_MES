@@ -29,8 +29,12 @@
                     <tr>
                         <th>TON</th>
                         <td><input name="ton" type="text"></td>
+                        <th>설치위치</th>
+                        <td><input name="location" type="text"></td>
+                    </tr>
+                    <tr>
                         <th>비고</th>
-                        <td><input name="acc" type="text"></td>
+                        <td colspan="3"><input name="acc" type="text"></td>
                     </tr>
                 </table>
             </div>

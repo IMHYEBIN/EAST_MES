@@ -8,12 +8,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/item1_new.css">
+    <link rel="stylesheet" href="css/item4_new.css">
     <title>East Company</title>
 </head>
 
 <body>
-    <form method="post" action="php/item1_insert.php" target="_blank">
+    <form method="post" action="php/item4_insert.php" target="_blank">
         <div class="container">
             <div class="title_section">
                 <div class="title">
@@ -29,13 +29,38 @@
                         <td><input name="item_name" type="text" required></td>
                     </tr>
                     <tr>
+                        <th>차종</th>
+                        <td>
+                            <!-- ???????????????????????????????????????????????????????????????????????????사용/미사용을 1번 2번으로 지정 -->
+                            <select name="status">
+                                <option value="양산">양산</option>
+                                <option value="4">단종</option>
+                                <option value="5">A/S</option>
+                            </select>
+                        </td>
+                        <th>원재료</th>
+                        <td>
+                            <!-- ???????????????????????????????????????????????????????????????????????????사용/미사용을 1번 2번으로 지정 -->
+                            <select name="status" required>
+                                <option value="">==선택==</option>
+                                <?php
+                                echo $sql00 = "SELECT * FROM item where index1 = '3'";
+                                $res00 = mysqli_query($conn, $sql00);
+                                for (; $row00 = mysqli_fetch_array($res00);) {
+                                    echo "<option value='" . $row00['item_code'] . "'>" . $row00['item_code'] . "/" . $row00['item_name'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>단가</th>
                         <td><input name="unit" type="text"></td>
                         <th>상태</th>
                         <td>
                             <!-- ???????????????????????????????????????????????????????????????????????????사용/미사용을 1번 2번으로 지정 -->
                             <select name="status">
-                                <option value="3">양산</option>
+                                <option value="양산">양산</option>
                                 <option value="4">단종</option>
                                 <option value="5">A/S</option>
                             </select>

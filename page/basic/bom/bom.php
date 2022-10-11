@@ -32,23 +32,18 @@
                         <div class="btn"><button type="submit" class="btn search_btn">검색</button></div>
                     </div>
                     <div class="main_section__search_th">
-                        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                        <div>번호</div>
-                        <div>구분</div>
-                        <div>제품코드</div>
-                        <div>제품명</div>
-                        <div>단가</div>
-                        <div>거래처</div>
-                        <div>사급</div>
-                        <div>현재고</div>
-                        <div style="width: 100px;">비고</div>
-                        <div style="width: 100px;">사용여부</div>
-                        <div style="width: 60px;">관리</div>
+                        <div class="th1">번호</div>
+                        <div class="th2">구분</div>
+                        <div class="th3">제품코드</div>
+                        <div class="th4">제품명</div>
+                        <div class="th5">단가</div>
+                        <div class="th6">현재고</div>
+                        <div class="th_btn">관리</div>
                     </div>
                 </div>
             </div>
         </form>
-        <iframe frameborder="0" name="iframe__main_view" src="/page/basic/bom/main_view.php"></iframe>
+        <iframe frameborder="0" name="iframe__main_view" src="/page/basic/bom/main_view.php" width="100%" height="100%"></iframe>
     </div>
 </body>
 

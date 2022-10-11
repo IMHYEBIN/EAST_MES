@@ -34,35 +34,34 @@ td {
 }
 
 .td1{
-  padding-left: 4vw;
-  width: 8vw;
+  padding-left: 1.5vw;
+  width: 10vw;
+  text-align: left;
 }
 
 .td2{
-  padding-left: 4vw;
-  width: 13vw;
+  width: 30vw;
+  text-align: left;
 }
 
 .td3{
-  width: 10vw;
+  width: 30vw;
+  text-align: left;
 }
 
 .td4{
-  width: 8vw;
+  width: 5vw;
+  text-align: center;
 }
 
 .td5{
-  padding-left: 3vw;
-  width: 10vw;
-}
-
-.td6{
-  padding-left: 4vw;
-  width: 10vw;
+  width: 5vw;
+  text-align: center;
 }
 
 .td7{
-  width: 8vw;
+  width: 5vw;
+  text-align: center;
 }
 
 .btn{

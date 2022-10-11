@@ -23,6 +23,8 @@
                 <button type="button" class="btn" onclick="popupNew()">등록</button>
             </div>
             <div class="search-section">
+                <div class="item">날짜</div>
+                <div class="input"><input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"></div>
                 <div class="item">제품코드</div>
                 <div class="input"><input type="text" name="item_code"></div>
                 <div class="item">제품명</div>
@@ -44,23 +46,23 @@
                         <option value="2">출고</option>
                     </select>
                 </div>
-                <button type="reset" class="btn">초기화</button>
+                <button type="button" class="btn" onClick="window.location.reload();">초기화</button>
                 <button type="submit" class="btn">검색</button>
             </div>
             <div class="table-section">
                 <div class="table-header">
                     <table>
                         <tr>
-                            <th class="id">번호</th>
-                            <th class="date">날짜</th>
-                            <th class="item_code">제품코드</th>
-                            <th class="item_name">제품명</th>
-                            <th class="type">입출고구분</th>
-                            <th class="unit">단가</th>
-                            <th class="inout_q">입출고수량</th>
-                            <th class="inout_a">금액</th>
-                            <th class="safe_stock">안전재고</th>
-                            <th class="acc">비고</th>
+                            <th class="th1">번호</th>
+                            <th class="th2">날짜</th>
+                            <th class="th3">제품코드</th>
+                            <th class="th4">제품명</th>
+                            <th class="th5">입출고구분</th>
+                            <th class="th6">단가</th>
+                            <th class="th7">입출고수량</th>
+                            <th class="th8">금액</th>
+                            <th class="th9">안전재고</th>
+                            <th class="th10">비고</th>
                         </tr>
                     </table>
                 </div>

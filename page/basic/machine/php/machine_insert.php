@@ -8,6 +8,7 @@
 $machine_code = $_POST['machine_code'];
 $machine_name = $_POST['machine_name'];
 $ton = $_POST['ton'];
+$location = $_POST['location'];
 $acc = $_POST['acc'];
 $add_date = date('Y-m-d');
 $edit_date = date('Y-m-d');
@@ -16,6 +17,7 @@ echo $sql = "insert into machine (
 							machine_code,
 							machine_name,
 							ton,
+							location,
 							acc,
 							add_date,
 							edit_date
@@ -24,6 +26,7 @@ echo $sql = "insert into machine (
 			'" . $machine_code . "',
 			'" . $machine_name . "',
 			'" . $ton . "',
+			'" . $location . "',
 			'" . $acc . "',
 			'" . $add_date . "',
 			'" . $edit_date . "'
@@ -36,6 +39,7 @@ $res = mysqli_query($conn, $sql);
 echo $machine_code;
 echo $machine_name;
 echo $ton;
+echo $location;
 echo $acc;
 echo $add_date;
 echo $edit_date;
