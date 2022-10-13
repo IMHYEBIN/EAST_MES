@@ -61,7 +61,7 @@ $res = mysqli_query($conn, $sql);
 
 <body style="background-color: #f0f4f5;">
     <div class="container">
-        <iframe frameborder="1" name="iframe__tree_view" src="/page/basic/bom/tree_view.php"></iframe>
+        <iframe frameborder="0" name="iframe__tree_view" src="/page/basic/bom/tree_view.php"></iframe>
         <div class="bom_list">
             <table>
                 <?php
@@ -98,7 +98,11 @@ $res = mysqli_query($conn, $sql);
                     </form>
                     </td>
                     <td class='td2'>" . $index1_value1 . "</td>
-                    <td class='td3' id='item_code'>" . $row['item_code'] . "</td>
+                    <td class='td3' id='item_code'>
+                    <form action='/page/basic/item/item_detail.php' method='post' target='item_detail' name='frm2'>
+                    <input type='submit' class='item_code_btn' value='" . $row['item_code'] . "' onclick='javascript:popup2(this.form)'>
+                    </form>
+                    </td>
                     <td class='td4' id='item_name'>" . $row['item_name'] . "</td>
                     <td class='td5'>" . $row['unit'] . "</td>
                     <td class='td8'>" . $row['safe_stock'] . "</td>
@@ -132,7 +136,7 @@ $res = mysqli_query($conn, $sql);
         </div>
     </div>
 
-    <!-- 팝업 스크립트 적용 -->
+    <!-- 클릭시 새창 -->
     <script type="text/javascript">
         function popup(frm) {
             //window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
@@ -141,6 +145,15 @@ $res = mysqli_query($conn, $sql);
             frm.action = 'pop_detail.php';
             frm.method = "POST";
             frm.submit();
+        }
+
+        function popup2(frm2) {
+            //window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
+            window.open("/page/basic/item/item_detail.php", "item_detail", "width=500, height=320, top=200, left=100");
+            frm2.target = 'item_detail';
+            frm2.action = '/page/basic/item/item_detail.php';
+            frm2.method = "POST";
+            frm2.submit();
         }
     </script>
 </body>

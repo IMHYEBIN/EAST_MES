@@ -20,7 +20,9 @@ $res = mysqli_query($conn, $sql);
 <body>
     <div class="container">
         <div class="left_section">
-            <div class="left_section__bom"><img src="/img/main/intro.jpg" alt=""></div>
+            <div class="left_section__bom">
+                <iframe frameborder="0" src="/main/main_left.php"></iframe>
+            </div>
         </div>
         <div class="right_section">
             <div class="right_section__stock">
@@ -35,65 +37,66 @@ $res = mysqli_query($conn, $sql);
                     <th>현재고</th>
                     <th>안전재고</th>
                     <th>상태</th>
-                    <?php
-                    for ($count = 1; $row = mysqli_fetch_array($res); $count++) {
+                    <tbody>
+                        <?php
+                        for ($count = 1; $row = mysqli_fetch_array($res); $count++) {
 
-                        if ($row['index1'] == '1') {
-                            $index1_value = "아쎄이";
-                        } else if ($row['index1'] == '2') {
-                            $index1_value = "부자재";
-                        } else if ($row['index1'] == '3') {
-                            $index1_value = "원재료";
-                        } else if ($row['index1'] == '4') {
-                            $index1_value = "반제품";
-                        } else {
-                            $index1_value = "ERROR";
-                        }
-
-                        //안전재고보다 많으면 초록
-                        if ($row['now_q'] > $row['safe_stock']) {
-                            $status = "darkgreen";
-                        }
-                        //안전재고보다 적을 때
-                        else if ($row['now_q'] <= $row['safe_stock']) {
-
-                            //안전재고의 30%보다 적을때
-                            if ($row['now_q'] <= (($row['safe_stock'] / 100) * 30)) {
-                                $status = "red";
-                            }
-                            //안전재고의 50%보다 적을때
-                            else if ($row['now_q'] <= (($row['safe_stock'] / 100) * 50)) {
-                                $status = "orange";
-                            }
-                            //안전재고의 70%보다 적을때
-                            else if ($row['now_q'] <= (($row['safe_stock'] / 100) * 70)) {
-                                $status = "yellow";
+                            if ($row['index1'] == '1') {
+                                $index1_value = "아쎄이";
+                            } else if ($row['index1'] == '2') {
+                                $index1_value = "부자재";
+                            } else if ($row['index1'] == '3') {
+                                $index1_value = "원재료";
+                            } else if ($row['index1'] == '4') {
+                                $index1_value = "반제품";
                             } else {
-                                $status = "green";
+                                $index1_value = "ERROR";
                             }
-                        }
 
-                        $sql00 = "select sum(inout_q) as in_q from in_out where date = '" . date('Y-m-d') . "' and item_code = '" . $row['item_code'] . "' and type='1'";
-                        $res00 = mysqli_query($conn, $sql00);
-                        $row00 = mysqli_fetch_array($res00);
+                            //안전재고보다 많으면 초록
+                            if ($row['now_q'] > $row['safe_stock']) {
+                                $status = "darkgreen";
+                            }
+                            //안전재고보다 적을 때
+                            else if ($row['now_q'] <= $row['safe_stock']) {
 
-                        if ($row00['in_q'] == null) {
-                            $in_q = '0';
-                        } else {
-                            $in_q = $row00['in_q'];
-                        }
+                                //안전재고의 30%보다 적을때
+                                if ($row['now_q'] <= (($row['safe_stock'] / 100) * 30)) {
+                                    $status = "red";
+                                }
+                                //안전재고의 50%보다 적을때
+                                else if ($row['now_q'] <= (($row['safe_stock'] / 100) * 50)) {
+                                    $status = "orange";
+                                }
+                                //안전재고의 70%보다 적을때
+                                else if ($row['now_q'] <= (($row['safe_stock'] / 100) * 70)) {
+                                    $status = "yellow";
+                                } else {
+                                    $status = "green";
+                                }
+                            }
 
-                        $sql01 = "select sum(inout_q) as out_q from in_out where date = '" . date('Y-m-d') . "' and item_code = '" . $row['item_code'] . "' and type='2'";
-                        $res01 = mysqli_query($conn, $sql01);
-                        $row01 = mysqli_fetch_array($res01);
+                            $sql00 = "select sum(inout_q) as in_q from in_out where date = '" . date('Y-m-d') . "' and item_code = '" . $row['item_code'] . "' and type='1'";
+                            $res00 = mysqli_query($conn, $sql00);
+                            $row00 = mysqli_fetch_array($res00);
 
-                        if ($row01['out_q'] == null) {
-                            $out_q = '0';
-                        } else {
-                            $out_q = $row01['out_q'];
-                        }
+                            if ($row00['in_q'] == null) {
+                                $in_q = '0';
+                            } else {
+                                $in_q = $row00['in_q'];
+                            }
 
-                        echo "
+                            $sql01 = "select sum(inout_q) as out_q from in_out where date = '" . date('Y-m-d') . "' and item_code = '" . $row['item_code'] . "' and type='2'";
+                            $res01 = mysqli_query($conn, $sql01);
+                            $row01 = mysqli_fetch_array($res01);
+
+                            if ($row01['out_q'] == null) {
+                                $out_q = '0';
+                            } else {
+                                $out_q = $row01['out_q'];
+                            }
+
+                            echo "
                             <tr>
                             <td class='td1' name='id'>" . $count . "</td>
                             <td class='td2'>" . $row['item_code'] . "</td>
@@ -106,8 +109,9 @@ $res = mysqli_query($conn, $sql);
                             <td class='td7' style='background-color:" . $status . ";'></td>
                             </tr>
                             ";
-                    }
-                    ?>
+                        }
+                        ?>
+                    </tbody>
                 </table>
             </div>
             <div class="right_section__plan">
@@ -121,6 +125,17 @@ $res = mysqli_query($conn, $sql);
             </div>
         </div>
     </div>
+    <!-- jquery 를 사용하기 위해 jquery 파일을 로드 -->
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script>
+        $(document).ready(function(e) {
+            /* a요소를 클릭 했을 시 */
+            $('a').click(function() {
+                /* iframe 요소의 src 속성값을 a 요소의 data-url 속성값으로 변경 */
+                $('#iframe').attr('src', $(this).attr('data-url'));
+            })
+        });
+    </script>
 </body>
 
 </html>
